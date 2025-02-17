@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIM-90</title>
+
+    <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="icon/favicon.svg" />
+    <link rel="shortcut icon" href="icon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="scale-wrapper">
+        <header class="header">
+            <section class="header_menu">
+                <img src="img/logo.png" alt="" class="logo">
+                <nav class="nav-links">
+                    <a href="#">Все про прилад</a>
+                    <a href="#">Програмне забезпечення</a>
+                    <a href="#">Історія створення</a>
+                    <a href="#">Документація</a>
+                </nav>
+                <button class="language-btn">
+                    <img src="img/Globe.png" alt="Language Icon">
+                    МОВА
+                </button>
+            </section>
+        </header>
+
+        <section class="fscreen">
+            <div class="fscreen_content">
+                <img src="img/made_in_ua.png" alt="" class="fscreen_content_image">
+                <div class="fscreen_about">
+                    <h1>UIM-90</h1>
+                    <p>Прилад для визначення пробивної напруги трансформаторної оливи та інших рідких діелектриків для
+                        лабораторій та сервісних центрів.</p>
+                    <button class="order-btn">ЗАМОВИТИ</button>
+                </div>
+                <div class="fscreen_image">
+                    <img src="img/device.png" alt="UIM-90">
+                </div>
+                <div class="fscreen_advantages">
+                    <div class="advantage">
+                        <img src="img/trust.png" alt="">
+                        <h2>>25</h2>
+                        <p>років досвіду</p>
+                    </div>
+                    <div class="advantage">
+                        <img src="img/current.png" alt="">
+                        <h2>ДО 100 КВ</h2>
+                        <p>діапазону виміру напруги</p>
+                    </div>
+                    <div class="advantage">
+                        <img src="img/report.png" alt="">
+                        <h2>+1.5%</h2>
+                        <p>похибка вимірювання напруги</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    <script>
+        function scaleContent() {
+            const baseWidth = 1440;
+            const baseHeight = 900;
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            // Добавляем небольшой запас (уменьшаем scale)
+            const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight) * 0.95;
+
+            document.querySelector('.scale-wrapper').style.transform =
+                `scale(${scaleFactor}) translate(-50%)`;
+        }
+
+        // Вызываем при загрузке и изменении размера окна
+        scaleContent();
+        window.addEventListener('resize', scaleContent);
+    </script>
+</body>
+
+</html>

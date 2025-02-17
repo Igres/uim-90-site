@@ -1,0 +1,251 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/ /* Убираем скроллы */
+}
+
+.scale-wrapper {
+    width: 1440px; /* Базовый размер */
+    height: 900px;
+    left: 50%;
+    top: 0;
+    transform-origin: top left;
+    position: absolute;
+    transform: scale(1); /* По умолчанию без изменений */
+}
+
+.header {
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+.header_menu {
+    width: 1280px;
+    height: 76px;
+    background-color: #EEFCF4;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-radius: 12px;
+    margin: 0 auto;
+    position: relative;
+    /* Можно использовать fixed */
+    top: 0;
+}
+
+.header_menu .logo {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 24px;
+}
+
+.header_menu .nav-links {
+    width: 716px;
+    margin-left: 125px;
+    color: #333333;
+}
+
+.header_menu .nav-links a {
+    margin-right: 35px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.header_menu .language-btn {
+    width: 174px;
+    /* ширина кнопки */
+    height: 56px;
+    /* высота кнопки */
+    background-color: #333333;
+    /* цвет фона */
+    color: #fff;
+    /* цвет текста */
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Furore', sans-serif;
+    /* Добавлено */
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 16px;
+
+    margin-left: 78px;
+    margin-right: 10px;
+}
+
+.header_menu .language-btn img {
+    width: 24px;
+    /* задаем размер изображения */
+    height: 24px;
+    /* задаем размер изображения */
+    margin-right: 10px;
+    /* отступ между картинкой и текстом */
+}
+
+.fscreen {
+    width: 1280px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/background_first_screen.png') no-repeat center;
+    background-size: cover;
+    /* или contain, если нужно вписать без обрезки */
+    border-radius: 12px;
+    padding: 0 48px;
+    margin: 0 auto;
+}
+
+/* Контейнер содержимого */
+.fscreen_content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fscreen_content_image {
+    position: absolute;
+    top: 120px;
+    /* Смещение от верхнего края */
+    left: 736px;
+    /* Смещение от левого края */
+    width: 181px;
+    /* Задайте нужный размер */
+    height: 181px;
+}
+
+/* Left part first screen */
+.fscreen_about {
+    flex: 1;
+    min-width: 455px;
+}
+
+.fscreen_about h1 {
+    font-family: 'Furore', sans-serif;
+    /* Добавлено */
+    font-size: 84px;
+    font-weight: normal;
+    color: #333333;
+    margin-top: 64px;
+}
+
+.fscreen_about p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 500;
+    /* Добавлено */
+    font-size: 20px;
+    color: #333333;
+    margin-top: 36px;
+    max-width: 428px;
+}
+
+.order-btn {
+    background: #219653;
+    color: white;
+    padding: 20px 64.5px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 36px;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    box-shadow: 0px 5px 20px -2px rgba(33, 150, 83, 0.5), inset 0px 4px 6px 3px rgba(39, 174, 96, 1);
+}
+
+.order-btn:hover {
+    background: #16A34A;
+    /* Новый цвет фона при наведении */
+    box-shadow: 0px 5px 20px -2px rgba(22, 163, 74, 0.5), inset 0px 4px 6px 3px rgba(34, 197, 94, 1);
+    /* Можно изменить тень для эффекта */
+}
+
+
+/* Middle first screen*/
+.fscreen_image {
+    flex: 1;
+    max-width: 450px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.order-btn:hover {
+    background: #219653;
+}
+
+
+/* Right part first screen*/
+.fscreen_advantages {
+    flex: 1;
+    padding-left: 96px;
+    padding-top: 37px;
+}
+
+.advantage {
+    margin-bottom: 30px;
+}
+
+.advantage image {
+    padding: 0;
+    margin: 0;
+}
+
+.advantage h2 {
+    font-family: 'Furore', sans-serif;
+    /* Добавлено */
+    font-size: 24px;
+    font-weight: normal;
+    color: #333333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.advantage p {
+    font-family: 'Gilroy-Light', sans-serif;
+    /* Добавлено */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+@font-face {
+    font-family: 'Furore';
+    src: url('../fonts/Furore.otf') format('opentype');
+    /* Исправлено */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../fonts/Gilroy-Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
