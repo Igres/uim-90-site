@@ -50,6 +50,8 @@ html, body {
     margin-top: 24px;
     margin-bottom: 12px;
     margin-left: 24px;
+    width: 154px;
+    height: 40px;
 }
 
 .header_menu .nav-links {
@@ -189,6 +191,11 @@ html, body {
     padding-bottom: 20px;
 }
 
+.fscreen_image img{
+    width: 372px;
+    height: 441px;
+}
+
 .order-btn:hover {
     background: #219653;
 }
@@ -205,9 +212,9 @@ html, body {
     margin-bottom: 30px;
 }
 
-.advantage image {
-    padding: 0;
-    margin: 0;
+.advantage img {
+    width: 50px;
+    height: 50px;
 }
 
 .advantage h2 {
