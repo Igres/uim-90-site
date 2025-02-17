@@ -67,7 +67,7 @@
 
     </div>
     <script>
-        /*function scaleContent() {
+        function scaleContent() {
             const baseWidth = 1440;
             const baseHeight = 900;
             const screenWidth = document.documentElement.clientWidth;
@@ -77,39 +77,11 @@
             const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight) * 0.95;
 
             document.querySelector('.scale-wrapper').style.transform =
-                `scale(${scaleFactor}) translate(-50%)`;
-        }*/
-        function detectZoom() {
-            return Math.round(window.devicePixelRatio * 100) / 100;
+                `translate(-50%, 0) scale(${scaleFactor})`;
         }
-        function scaleContent() {
-            const baseWidth = 1440;
-            const baseHeight = 900;
-
-            const screenWidth = document.documentElement.clientWidth;
-            const screenHeight = document.documentElement.clientHeight;
-
-            // Вычисляем коэффициент масштабирования
-            const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight);
-            const scaleFactor_correct = scaleFactor * 0.95;
-            const scaleFactor_one = 1 + (Math.random() * 0.00002 - 0.00001);
-
-            // Применяем `scale()` только для контейнера
-            const wrapper = document.querySelector('.scale-wrapper');
-            // Проверяем, увеличен ли масштаб браузера
-            if (detectZoom() === 1) {
-                wrapper.style.transform  = `translate(-50%, 0) scale(${scaleFactor_correct})`;
-            } else {
-                wrapper.style.transform  = 'translate(-50%, 0)';
-            }
-
-            // **Масштабируем шрифты, padding и другие свойства вручную**
-            document.documentElement.style.setProperty('--scale-one', scaleFactor_one); // CSS-переменная для других стилей
-        }
-
         // Вызываем при загрузке и изменении размера окна
         scaleContent();
-        window.addEventListener('resize', scaleContent);
+        //window.addEventListener('resize', scaleContent);
     </script>
 </body>
 

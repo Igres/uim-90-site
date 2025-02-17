@@ -6,12 +6,10 @@
     font-family: Arial, sans-serif;
 }
 
-html,
-body {
+html, body {
     width: 100%;
     height: 100%;
-    /*overflow: hidden;*/
-    /* Убираем скроллы */
+    /*overflow: hidden;*/ /* Убираем скроллы */
 }
 
 .scale-wrapper {
@@ -26,78 +24,90 @@ body {
     background: #ffffff;
     display: flex;
     justify-content: center;
-    padding-top: calc(12px * var(--scale-one));
-    padding-bottom: calc(12px * var(--scale-one));
+    padding-top: 12px;
+    padding-bottom: 12px;
+
 }
 
 .header_menu {
     width: 1280px;
-    height: calc(76px * var(--scale-one));
+    height: 76px;
     background-color: #EEFCF4;
     display: flex;
     align-items: center;
-    border-radius: calc(12px * var(--scale-one));
+    padding: 0;
+    border-radius: 12px;
     margin: 0 auto;
     position: relative;
+    /* Можно использовать fixed */
     top: 0;
 }
 
 .header_menu .logo {
-    margin-top: calc(24px * var(--scale-one));
-    margin-bottom: calc(12px * var(--scale-one));
-    margin-left: calc(24px * var(--scale-one));
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 24px;
 }
 
 .header_menu .nav-links {
-    width: calc(716px * var(--scale-one));
-    margin-left: calc(125px * var(--scale-one));
+    width: 716px;
+    margin-left: 125px;
     color: #333333;
 }
 
 .header_menu .nav-links a {
-    margin-right: calc(35px * var(--scale-one));
+    margin-right: 35px;
     font-family: 'Gilroy-Light', sans-serif;
     font-weight: 600;
-    font-size: calc(16px * var(--scale-one));
+    font-size: 16px;
     color: #333333;
     text-decoration: none;
 }
 
 .header_menu .language-btn {
-    width: calc(174px * var(--scale-one));
-    height: calc(56px * var(--scale-one));
+    width: 174px;
+    /* ширина кнопки */
+    height: 56px;
+    /* высота кнопки */
     background-color: #333333;
+    /* цвет фона */
     color: #fff;
+    /* цвет текста */
     border: none;
-    border-radius: calc(12px * var(--scale-one));
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Furore', sans-serif;
-    font-size: calc(16px * var(--scale-one));
+    /* Добавлено */
+    font-size: 16px;
     font-weight: normal;
-    padding: 0 calc(16px * var(--scale-one));
-    margin-left: calc(78px * var(--scale-one));
-    margin-right: calc(10px * var(--scale-one));
+    padding: 0 16px;
+
+    margin-left: 78px;
+    margin-right: 10px;
 }
 
 .header_menu .language-btn img {
-    width: calc(24px * var(--scale-one));
-    height: calc(24px * var(--scale-one));
-    margin-right: calc(10px * var(--scale-one));
+    width: 24px;
+    /* задаем размер изображения */
+    height: 24px;
+    /* задаем размер изображения */
+    margin-right: 10px;
+    /* отступ между картинкой и текстом */
 }
 
 .fscreen {
-    width: calc(1280px * var(--scale-one));
-    height: calc(480px * var(--scale-one));
+    width: 1280px;
+    height: 480px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: url('../img/background_first_screen.png') no-repeat center;
     background-size: cover;
     /* или contain, если нужно вписать без обрезки */
-    border-radius: calc(12px * var(--scale-one));
-    padding: 0 calc(48px * var(--scale-one));
+    border-radius: 12px;
+    padding: 0 48px;
     margin: 0 auto;
 }
 
@@ -111,68 +121,69 @@ body {
 
 .fscreen_content_image {
     position: absolute;
-    top: calc(120px * var(--scale-one));
+    top: 120px;
     /* Смещение от верхнего края */
-    left: calc(736px * var(--scale-one));
+    left: 736px;
     /* Смещение от левого края */
-    width: calc(181px * var(--scale-one));
+    width: 181px;
     /* Задайте нужный размер */
-    height: calc(181px * var(--scale-one));
+    height: 181px;
 }
 
 /* Left part first screen */
 .fscreen_about {
     flex: 1;
-    min-width: calc(455px * var(--scale-one));
+    min-width: 455px;
 }
 
 .fscreen_about h1 {
     font-family: 'Furore', sans-serif;
     /* Добавлено */
-    font-size: calc(84px * var(--scale-one));
+    font-size:  calc(84px * var(--scale-one));
     font-weight: normal;
     color: #333333;
-    margin-top: calc(64px * var(--scale-one));
+    margin-top: 64px;
 }
 
 .fscreen_about p {
     font-family: 'Gilroy-Light', sans-serif;
     font-weight: 500;
     /* Добавлено */
-    font-size: calc(20px * var(--scale-one));
+    font-size: 20px;
     color: #333333;
-    margin-top: calc(36px * var(--scale-one));
-    max-width: calc(428px * var(--scale-one));
+    margin-top: 36px;
+    max-width: 428px;
 }
 
 .order-btn {
     background: #219653;
     color: white;
-    padding: calc(20px * var(--scale-one)) calc(64.5px * var(--scale-one));
+    padding: 20px 64.5px;
     border: none;
-    border-radius: calc(12px * var(--scale-one));
+    border-radius: 12px;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-top: calc(36px * var(--scale-one));
+    margin-top: 36px;
     font-family: 'Furore', sans-serif;
-    font-size: calc(16px * var(--scale-one));
+    font-size: 16px;
     font-weight: normal;
-    box-shadow: 0px calc(5px * var(--scale-one)) calc(20px * var(--scale-one)) -2px rgba(33, 150, 83, 0.5), inset 0px calc(4px * var(--scale-one)) calc(6px * var(--scale-one)) calc(3px * var(--scale-one)) rgba(39, 174, 96, 1);
+    box-shadow: 0px 5px 20px -2px rgba(33, 150, 83, 0.5), inset 0px 4px 6px 3px rgba(39, 174, 96, 1);
 }
 
 .order-btn:hover {
     background: #16A34A;
     /* Новый цвет фона при наведении */
-    box-shadow: 0px calc(5px * var(--scale-one)) calc(20px * var(--scale-one)) -2px rgba(22, 163, 74, 0.5), inset 0px calc(4px * var(--scale-one)) calc(6px * var(--scale-one)) calc(3px * var(--scale-one)) rgba(34, 197, 94, 1);
+    box-shadow: 0px 5px 20px -2px rgba(22, 163, 74, 0.5), inset 0px 4px 6px 3px rgba(34, 197, 94, 1);
     /* Можно изменить тень для эффекта */
 }
+
 
 /* Middle first screen*/
 .fscreen_image {
     flex: 1;
-    max-width: calc(450px * var(--scale-one));
-    padding-top: calc(20px * var(--scale-one));
-    padding-bottom: calc(20px * var(--scale-one));
+    max-width: 450px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .order-btn:hover {
@@ -183,12 +194,12 @@ body {
 /* Right part first screen*/
 .fscreen_advantages {
     flex: 1;
-    padding-left: calc(96px * var(--scale-one));
-    padding-top: calc(37px * var(--scale-one));
+    padding-left: 96px;
+    padding-top: 37px;
 }
 
 .advantage {
-    margin-bottom: calc(30px * var(--scale-one));
+    margin-bottom: 30px;
 }
 
 .advantage image {
@@ -199,17 +210,17 @@ body {
 .advantage h2 {
     font-family: 'Furore', sans-serif;
     /* Добавлено */
-    font-size: calc(24px * var(--scale-one));
+    font-size: 24px;
     font-weight: normal;
     color: #333333;
-    margin-top: calc(10px * var(--scale-one));
-    margin-bottom: calc(5px * var(--scale-one));
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .advantage p {
     font-family: 'Gilroy-Light', sans-serif;
     /* Добавлено */
-    font-size: calc(18px * var(--scale-one));
+    font-size: 18px;
     font-weight: 600;
     color: #333333;
 }
