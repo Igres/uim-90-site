@@ -79,6 +79,9 @@
             document.querySelector('.scale-wrapper').style.transform =
                 `scale(${scaleFactor}) translate(-50%)`;
         }*/
+        function detectZoom() {
+            return Math.round(window.devicePixelRatio * 100) / 100;
+        }
         function scaleContent() {
             const baseWidth = 1440;
             const baseHeight = 900;
@@ -92,11 +95,15 @@
             const scaleFactor_one = 1 + (Math.random() * 0.00002 - 0.00001);
 
             // Применяем `scale()` только для контейнера
-           const wrapper = document.querySelector('.scale-wrapper');
-            wrapper.style.transform = `translate(-50%, 0) scale(${scaleFactor_correct})`;
+            const wrapper = document.querySelector('.scale-wrapper');
+            // Проверяем, увеличен ли масштаб браузера
+            if (detectZoom() === 1) {
+                wrapper.style.transform  = `translate(-50%, 0) scale(${scaleFactor_correct})`;
+            } else {
+                wrapper.style.transform  = 'translate(-50%, 0)';
+            }
 
             // **Масштабируем шрифты, padding и другие свойства вручную**
-            document.documentElement.style.setProperty('--scale-factor', scaleFactor_correct);
             document.documentElement.style.setProperty('--scale-one', scaleFactor_one); // CSS-переменная для других стилей
         }
 
