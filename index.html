@@ -64,14 +64,14 @@
                 </div>
             </div>
         </section>
-        
+
     </div>
     <script>
         function scaleContent() {
             const baseWidth = 1440;
             const baseHeight = 900;
-            const screenWidth = window.innerWidth;
-            const screenHeight = window.innerHeight;
+            const screenWidth = document.documentElement.clientWidth;
+            const screenHeight = document.documentElement.clientHeight;
 
             // Добавляем небольшой запас (уменьшаем scale)
             const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight) * 0.95;
