@@ -1,0 +1,237 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    /* Убираем скроллы */
+}
+
+.scale-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: top center;
+}
+
+.header {
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding-top: calc(12px * var(--scale-one));
+    padding-bottom: calc(12px * var(--scale-one));
+}
+
+.header_menu {
+    width: 1280px;
+    height: calc(76px * var(--scale-one));
+    background-color: #EEFCF4;
+    display: flex;
+    align-items: center;
+    border-radius: calc(12px * var(--scale-one));
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+}
+
+.header_menu .logo {
+    margin-top: calc(24px * var(--scale-one));
+    margin-bottom: calc(12px * var(--scale-one));
+    margin-left: calc(24px * var(--scale-one));
+}
+
+.header_menu .nav-links {
+    width: calc(716px * var(--scale-one));
+    margin-left: calc(125px * var(--scale-one));
+    color: #333333;
+}
+
+.header_menu .nav-links a {
+    margin-right: calc(35px * var(--scale-one));
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 600;
+    font-size: calc(16px * var(--scale-one));
+    color: #333333;
+    text-decoration: none;
+}
+
+.header_menu .language-btn {
+    width: calc(174px * var(--scale-one));
+    height: calc(56px * var(--scale-one));
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: calc(12px * var(--scale-one));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Furore', sans-serif;
+    font-size: calc(16px * var(--scale-one));
+    font-weight: normal;
+    padding: 0 calc(16px * var(--scale-one));
+    margin-left: calc(78px * var(--scale-one));
+    margin-right: calc(10px * var(--scale-one));
+}
+
+.header_menu .language-btn img {
+    width: calc(24px * var(--scale-one));
+    height: calc(24px * var(--scale-one));
+    margin-right: calc(10px * var(--scale-one));
+}
+
+.fscreen {
+    width: calc(1280px * var(--scale-one));
+    height: calc(480px * var(--scale-one));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/background_first_screen.png') no-repeat center;
+    background-size: cover;
+    /* или contain, если нужно вписать без обрезки */
+    border-radius: calc(12px * var(--scale-one));
+    padding: 0 calc(48px * var(--scale-one));
+    margin: 0 auto;
+}
+
+/* Контейнер содержимого */
+.fscreen_content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fscreen_content_image {
+    position: absolute;
+    top: calc(120px * var(--scale-one));
+    /* Смещение от верхнего края */
+    left: calc(736px * var(--scale-one));
+    /* Смещение от левого края */
+    width: calc(181px * var(--scale-one));
+    /* Задайте нужный размер */
+    height: calc(181px * var(--scale-one));
+}
+
+/* Left part first screen */
+.fscreen_about {
+    flex: 1;
+    min-width: calc(455px * var(--scale-one));
+}
+
+.fscreen_about h1 {
+    font-family: 'Furore', sans-serif;
+    /* Добавлено */
+    font-size: calc(84px * var(--scale-one));
+    font-weight: normal;
+    color: #333333;
+    margin-top: calc(64px * var(--scale-one));
+}
+
+.fscreen_about p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 500;
+    /* Добавлено */
+    font-size: calc(20px * var(--scale-one));
+    color: #333333;
+    margin-top: calc(36px * var(--scale-one));
+    max-width: calc(428px * var(--scale-one));
+}
+
+.order-btn {
+    background: #219653;
+    color: white;
+    padding: calc(20px * var(--scale-one)) calc(64.5px * var(--scale-one));
+    border: none;
+    border-radius: calc(12px * var(--scale-one));
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: calc(36px * var(--scale-one));
+    font-family: 'Furore', sans-serif;
+    font-size: calc(16px * var(--scale-one));
+    font-weight: normal;
+    box-shadow: 0px calc(5px * var(--scale-one)) calc(20px * var(--scale-one)) -2px rgba(33, 150, 83, 0.5), inset 0px calc(4px * var(--scale-one)) calc(6px * var(--scale-one)) calc(3px * var(--scale-one)) rgba(39, 174, 96, 1);
+}
+
+.order-btn:hover {
+    background: #16A34A;
+    /* Новый цвет фона при наведении */
+    box-shadow: 0px calc(5px * var(--scale-one)) calc(20px * var(--scale-one)) -2px rgba(22, 163, 74, 0.5), inset 0px calc(4px * var(--scale-one)) calc(6px * var(--scale-one)) calc(3px * var(--scale-one)) rgba(34, 197, 94, 1);
+    /* Можно изменить тень для эффекта */
+}
+
+/* Middle first screen*/
+.fscreen_image {
+    flex: 1;
+    max-width: calc(450px * var(--scale-one));
+    padding-top: calc(20px * var(--scale-one));
+    padding-bottom: calc(20px * var(--scale-one));
+}
+
+.order-btn:hover {
+    background: #219653;
+}
+
+
+/* Right part first screen*/
+.fscreen_advantages {
+    flex: 1;
+    padding-left: calc(96px * var(--scale-one));
+    padding-top: calc(37px * var(--scale-one));
+}
+
+.advantage {
+    margin-bottom: calc(30px * var(--scale-one));
+}
+
+.advantage image {
+    padding: 0;
+    margin: 0;
+}
+
+.advantage h2 {
+    font-family: 'Furore', sans-serif;
+    /* Добавлено */
+    font-size: calc(24px * var(--scale-one));
+    font-weight: normal;
+    color: #333333;
+    margin-top: calc(10px * var(--scale-one));
+    margin-bottom: calc(5px * var(--scale-one));
+}
+
+.advantage p {
+    font-family: 'Gilroy-Light', sans-serif;
+    /* Добавлено */
+    font-size: calc(18px * var(--scale-one));
+    font-weight: 600;
+    color: #333333;
+}
+
+@font-face {
+    font-family: 'Furore';
+    src: url('../fonts/Furore.otf') format('opentype');
+    /* Исправлено */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../fonts/Gilroy-Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}

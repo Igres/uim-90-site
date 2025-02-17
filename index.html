@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 
 <body>
@@ -67,7 +67,7 @@
 
     </div>
     <script>
-        function scaleContent() {
+        /*function scaleContent() {
             const baseWidth = 1440;
             const baseHeight = 900;
             const screenWidth = document.documentElement.clientWidth;
@@ -78,6 +78,26 @@
 
             document.querySelector('.scale-wrapper').style.transform =
                 `scale(${scaleFactor}) translate(-50%)`;
+        }*/
+        function scaleContent() {
+            const baseWidth = 1440;
+            const baseHeight = 900;
+
+            const screenWidth = document.documentElement.clientWidth;
+            const screenHeight = document.documentElement.clientHeight;
+
+            // Вычисляем коэффициент масштабирования
+            const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight);
+            const scaleFactor_correct = scaleFactor * 0.95;
+            const scaleFactor_one = 1 + (Math.random() * 0.00002 - 0.00001);
+
+            // Применяем `scale()` только для контейнера
+           const wrapper = document.querySelector('.scale-wrapper');
+            wrapper.style.transform = `translate(-50%, 0) scale(${scaleFactor_correct})`;
+
+            // **Масштабируем шрифты, padding и другие свойства вручную**
+            document.documentElement.style.setProperty('--scale-factor', scaleFactor_correct);
+            document.documentElement.style.setProperty('--scale-one', scaleFactor_one); // CSS-переменная для других стилей
         }
 
         // Вызываем при загрузке и изменении размера окна
