@@ -1,4 +1,6 @@
-/* Общие стили */
+/* Main Styles */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,21 +8,25 @@
     font-family: Arial, sans-serif;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
-    /*overflow: hidden;*/ /* Убираем скроллы */
 }
 
 .scale-wrapper {
-    width: 1440px; /* Базовый размер */
+    width: 1440px;
     height: 900px;
     left: 50%;
     top: 0;
     transform-origin: top left;
     position: absolute;
-    transform: scale(1); /* По умолчанию без изменений */
+    transform: scale(1);
 }
+
+
+/* Header Section */
+
 
 .header {
     width: 100%;
@@ -42,7 +48,6 @@ html, body {
     border-radius: 12px;
     margin: 0 auto;
     position: relative;
-    /* Можно использовать fixed */
     top: 0;
 }
 
@@ -71,36 +76,34 @@ html, body {
 
 .header_menu .language-btn {
     width: 174px;
-    /* ширина кнопки */
     height: 56px;
-    /* высота кнопки */
     background-color: #333333;
-    /* цвет фона */
     color: #fff;
-    /* цвет текста */
     border: none;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Furore', sans-serif;
-    /* Добавлено */
     font-size: 16px;
     font-weight: normal;
     padding: 0 16px;
 
     margin-left: 78px;
     margin-right: 10px;
+
+    box-shadow: inset 0px 4px 6px 3px #4F4F4F;
 }
 
 .header_menu .language-btn img {
     width: 24px;
-    /* задаем размер изображения */
     height: 24px;
-    /* задаем размер изображения */
     margin-right: 10px;
-    /* отступ между картинкой и текстом */
 }
+
+
+/* Firstscreen Section */
+
 
 .fscreen {
     width: 1280px;
@@ -110,13 +113,11 @@ html, body {
     justify-content: center;
     background: url('../img/background_first_screen.png') no-repeat center;
     background-size: cover;
-    /* или contain, если нужно вписать без обрезки */
     border-radius: 12px;
     padding: 0 48px;
-    margin: 0 auto;
+    margin: 0 80px;
 }
 
-/* Контейнер содержимого */
 .fscreen_content {
     position: relative;
     display: flex;
@@ -127,15 +128,11 @@ html, body {
 .fscreen_content_image {
     position: absolute;
     top: 120px;
-    /* Смещение от верхнего края */
     left: 736px;
-    /* Смещение от левого края */
     width: 181px;
-    /* Задайте нужный размер */
     height: 181px;
 }
 
-/* Left part first screen */
 .fscreen_about {
     flex: 1;
     min-width: 455px;
@@ -143,7 +140,6 @@ html, body {
 
 .fscreen_about h1 {
     font-family: 'Furore', sans-serif;
-    /* Добавлено */
     font-size: 84px;
     font-weight: normal;
     color: #333333;
@@ -153,7 +149,6 @@ html, body {
 .fscreen_about p {
     font-family: 'Gilroy-Light', sans-serif;
     font-weight: 500;
-    /* Добавлено */
     font-size: 20px;
     color: #333333;
     margin-top: 36px;
@@ -177,13 +172,10 @@ html, body {
 
 .order-btn:hover {
     background: #16A34A;
-    /* Новый цвет фона при наведении */
     box-shadow: 0px 5px 20px -2px rgba(22, 163, 74, 0.5), inset 0px 4px 6px 3px rgba(34, 197, 94, 1);
-    /* Можно изменить тень для эффекта */
 }
 
 
-/* Middle first screen*/
 .fscreen_image {
     flex: 1;
     max-width: 450px;
@@ -191,7 +183,7 @@ html, body {
     padding-bottom: 20px;
 }
 
-.fscreen_image img{
+.fscreen_image img {
     width: 372px;
     height: 441px;
 }
@@ -201,7 +193,6 @@ html, body {
 }
 
 
-/* Right part first screen*/
 .fscreen_advantages {
     flex: 1;
     padding-left: 96px;
@@ -219,7 +210,6 @@ html, body {
 
 .advantage h2 {
     font-family: 'Furore', sans-serif;
-    /* Добавлено */
     font-size: 24px;
     font-weight: normal;
     color: #333333;
@@ -229,11 +219,89 @@ html, body {
 
 .advantage p {
     font-family: 'Gilroy-Light', sans-serif;
-    /* Добавлено */
     font-size: 18px;
     font-weight: 600;
     color: #333333;
 }
+
+
+/* Slider Screen */
+
+
+.slider {
+    width: 1280px;
+    height: 312px;
+    display: flex;
+    justify-content: center;
+    margin: 60px 80px 0 80px;
+}
+
+.slider_title {
+    width: 1280px;
+    height: 312px;
+    display: flex;
+}
+
+.slider_title h3 {
+    width: 640px;
+    font-family: 'Furore', sans-serif;
+    font-size: 40px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.btn_container {
+    width: 640px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn_back {
+    width: 56px;
+    height: 56px;
+    background: url('../img/back.svg') no-repeat center;
+    background-size: cover;
+    border: none;
+    margin-right: 16px;
+}
+
+.btn_forward {
+    width: 56px;
+    height: 56px;
+    background: url('../img/forward.svg') no-repeat center;
+    background-size: cover;
+    border: none;
+
+}
+
+.slider_content {
+    width: 1280px;
+    height: 240px;
+}
+
+
+/* Table Screen */
+
+/* Advantages Screen */
+
+/* App Screen */
+
+/* Sale Screen */
+
+/* Poster Screen */
+
+/* Docs Screen */
+
+/* History Screen */
+
+/* Contact Screen */
+
+/* Feedback Screen */
+
+/* Footer Screen */
+
+/* Fonts */
+
 
 @font-face {
     font-family: 'Furore';

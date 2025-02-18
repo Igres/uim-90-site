@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Слайдер</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 1280px;
+            height: 240px;
+            overflow: hidden;
+            margin: 50px auto;
+            border: 2px solid #000;
+        }
+
+        .slider-track {
+            display: flex;
+            width: max-content;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            width: 240px;
+            height: 240px;
+            background: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-right: 2px solid #fff;
+        }
+
+        .slider-buttons {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .slider-buttons button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider-buttons">
+        <button id="prev">Назад</button>
+        <button id="next">Вперед</button>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider-track">
+
+            <div class="slide">2 1</div>
+            <div class="slide">3 1</div>
+            <div class="slide">4 1</div>
+            <div class="slide">5 1</div>
+            <div class="slide">6 1</div>
+
+            <!-- Оригинальные слайды -->
+            <div class="slide">1 2</div>
+            <div class="slide">2 2</div>
+            <div class="slide">3 2</div>
+            <div class="slide">4 2</div>
+            <div class="slide">5 2</div>
+            <div class="slide">6 2</div>
+
+            <!-- Копии первых 5 элементов -->
+            <div class="slide">1 3</div>
+            <div class="slide">2 3</div>
+            <div class="slide">3 3</div>
+            <div class="slide">4 3</div>
+            <div class="slide">5 3</div>
+            <div class="slide">6 3</div>
+            <div class="slide">1 3</div>
+            <div class="slide">2 3</div>
+            <div class="slide">3 3</div>
+
+        </div>
+    </div>
+
+    <script>
+        const track = document.querySelector('.slider-track');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+
+        let slideWidth = 240 + 20; // Ширина слайда + расстояние между ними
+        let original_slides = 6; // Количество оригинальных слайдов
+        let start_offset = 5;
+        let index = start_offset + 1; // Начинаем с 1, потому что 0 - это дубликат последнего слайда
+        let isAnimating = false;
+
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+        let isDragging = false;
+
+        track.style.transform = `translateX(${-index * slideWidth}px)`;
+
+        function moveSlide(offset) {
+            if (isAnimating) return;
+            isAnimating = true;
+            index += offset;
+
+            track.style.transition = "transform 0.5s ease-in-out";
+            track.style.transform = `translateX(${-index * slideWidth}px)`;
+
+            track.addEventListener("transitionend", handleTransitionEnd, { once: true });
+        }
+
+        function handleTransitionEnd() {
+            if (index >= original_slides + start_offset) {
+                // Если дошли до копии первого элемента — мгновенно перемещаемся на первый оригинальный
+                index -= original_slides;
+                track.style.transition = "none";
+                track.style.transform = `translateX(${-index * slideWidth}px)`;
+            } else if (index < start_offset) {
+                // Если дошли до копии последнего элемента — мгновенно перемещаемся на последний оригинальный
+                index += original_slides;
+                track.style.transition = "none";
+                track.style.transform = `translateX(${-index * slideWidth}px)`;
+            }
+
+            isAnimating = false;
+        }
+
+        // Остановка `autoSlide` во время перетягивания
+        let autoSlide = setInterval(() => moveSlide(1), 3000);
+
+        nextBtn.addEventListener('click', () => {
+            moveSlide(1);
+            resetAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            moveSlide(-1);
+            resetAutoSlide();
+        });
+
+        function resetAutoSlide() {
+            clearInterval(autoSlide);
+            autoSlide = setInterval(() => moveSlide(1), 3000);
+        }
+
+        // ======== Улучшенное перетаскивание мышью ========
+        track.addEventListener("mousedown", startDrag);
+        track.addEventListener("touchstart", startDrag);
+
+        track.addEventListener("mouseup", endDrag);
+        track.addEventListener("mouseleave", endDrag);
+        track.addEventListener("touchend", endDrag);
+
+        track.addEventListener("mousemove", drag);
+        track.addEventListener("touchmove", drag);
+
+        function startDrag(event) {
+            if (isAnimating) return;
+
+            isDragging = true;
+            clearInterval(autoSlide); // Остановить автопрокрутку во время перетаскивания
+
+            track.style.transition = "none"; // Отключаем анимацию, пока тянем
+            startX = event.type.includes("mouse") ? event.clientX : event.touches[0].clientX;
+            prevTranslate = -index * slideWidth;
+
+            currentTranslate = 0;
+        }
+
+        function drag(event) {
+            if (!isDragging) return;
+
+            currentX = event.type.includes("mouse") ? event.clientX : event.touches[0].clientX;
+            currentTranslate = prevTranslate + (currentX - startX);
+
+            track.style.transform = `translateX(${currentTranslate}px)`;
+        }
+
+        function endDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+
+            let movedBy = currentTranslate - prevTranslate;
+            let offset = Math.round(movedBy / slideWidth);
+
+            if ((offset !== 0) && (currentTranslate !== 0)) {
+                moveSlide(-offset);
+            } else {
+                track.style.transition = "transform 0.3s ease-out";
+                track.style.transform = `translateX(${-index * slideWidth}px)`;
+            }
+
+            resetAutoSlide(); // Возобновить `autoSlide` после перетаскивания
+        }
+
+        let activeSlides = []; // Хранение активных слайдов
+        const originalSlidesCount = original_slides; // Количество оригинальных слайдов
+
+        slides.forEach((slide, i) => {
+            slide.addEventListener("mouseover", () => {
+                // Сбрасываем цвет у предыдущих активных слайдов
+                activeSlides.forEach(activeSlide => {
+                    activeSlide.style.backgroundColor = "";
+                });
+
+                // Определяем индексы элементов, которые нужно покрасить
+                const relatedIndexes = [
+                    i, // Текущий
+                    i - originalSlidesCount >= 0 ? i - originalSlidesCount : null, // Предыдущий аналог
+                    i + originalSlidesCount < slides.length ? i + originalSlidesCount : null // Следующий аналог
+                ];
+
+                // Красим найденные элементы и обновляем activeSlides
+                activeSlides = relatedIndexes
+                    .filter(index => index !== null) // Исключаем null
+                    .map(index => slides[index]); // Получаем элементы по индексам
+
+                activeSlides.forEach(activeSlide => {
+                    activeSlide.style.backgroundColor = "#f0f0f0"; // Измени на нужный цвет
+                });
+            });
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>
