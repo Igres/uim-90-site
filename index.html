@@ -131,7 +131,52 @@
             <p class="p_bottom">Наявність програмного забезпечення, що дозволяє зберігати,<br>обробляти та друкувати
                 результати випробувань</p>
         </section>
-        <section class="app_section"></section>
+        <section class="app_section">
+            <div class="app_section_title">
+                <img src="img/background_pc_2.png" alt="" class="absolute-image">
+                <h3>Програма «VirtualUIM»</h3>
+                <p>Програма «VirtualUIM» для керування пристроєм UIM-90 через ПК. <br>
+                    Дозволяє запускати випробування, зберігати та обробляти результати.</p>
+            </div>
+            <div class="app_advantage">
+                <div class="app_advantage_icon  icon1">
+                    <img src="img/bluetooth.svg" class="icon1" alt="">
+                </div>
+                <div class="app_advantage_icon  icon2">
+                    <img src="img/advantage_monitor.svg" alt="">
+                </div>
+                <div class="app_advantage_icon  icon3">
+                    <img src="img/app_settings.svg" alt="">
+                </div>
+                <div class="app_advantage_icon  icon4">
+                    <img src="img/app_results.svg" alt="">
+                </div>
+                <div class="app_advantage_p  p1">
+                    Бездротове підключення до ПК
+                </div>
+                <div class="app_advantage_p  p2">
+                    Робота з кількома пристроями
+                </div>
+                <div class="app_advantage_p  p3">
+                    Віддалене керування з ПК
+                </div>
+                <div class="app_advantage_p  p4">
+                    Обробка результатів випробувань
+                </div>
+            </div>
+            <div class="functions_list">
+                <h4>Основні функції:</h4>
+                <ul>
+                    <li>Дистанційне керування UIM-90</li>
+                    <li>Візуалізація ходу випробувань</li>
+                    <li>Відображення та збереження результатів</li>
+                    <li>Експорт у Excel та друк звітів</li>
+                    <li>Вибірка випробувань за критеріями</li>
+                    <li>Технічна підтримка та оновлення</li>
+                </ul>
+            </div>
+
+        </section>
 
     </div>
 
@@ -190,7 +235,9 @@
         }
         function updateContent() {
             const screenHeight = document.documentElement.clientHeight;
+            const screenWidth = document.documentElement.clientWidth;
             const scaleFactor = Math.round(Math.min(screenWidth / baseWidth, screenHeight / baseHeight) * 10) / 10;
+            //const scaleFactor = screenWidth / baseWidth;
             console.log(scaleFactor);
 
             if (scaleFactor > 1) {

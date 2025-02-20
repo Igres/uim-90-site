@@ -8,29 +8,39 @@
     font-family: Arial, sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
 
+html {
+    background-color: #4F4F4F;
+}
+
 body {
     width: 100%;
     display: flex;
-    flex-direction: column; /* Чтобы содержимое шло вниз */
-    align-items: start; /* Выравниваем вложенные элементы по центру */
+    flex-direction: column;
+    /* Чтобы содержимое шло вниз */
+    align-items: start;
 }
 
 .scale-wrapper {
     width: 1440px;
-    height: 900px;
-    margin: 0 0; /* Центрируем по горизонтали */
+    margin: 0 0;
+    /* Центрируем по горизонтали */
     display: flex;
-    flex-direction: column; /* Чтобы содержимое шло вниз */
-    align-items: center; /* Выравниваем вложенные элементы по центру */
+    flex-direction: column;
+    /* Чтобы содержимое шло вниз */
+    align-items: center;
+    /* Выравниваем вложенные элементы по центру */
     transform-origin: top left;
     transform: scale(1);
+    background-color: white;
 }
+
 /* Header Section */
 
 
@@ -399,7 +409,7 @@ td:first-child {
 .th_column_1 {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
-    
+
 }
 
 .th_column_2 {
@@ -588,7 +598,9 @@ td:first-child {
     text-align: center;
 }
 
+
 /* App Screen */
+
 
 .app_section {
     width: 1280px;
@@ -596,12 +608,143 @@ td:first-child {
     display: flex;
     flex-direction: column;
     /* Добавлено */
-    align-items: center;
     /* Чтобы центрировать содержимое */
     margin: 80px 80px 0 80px;
     position: relative;
 }
 
+.absolute-image {
+    position: absolute;
+    top: 20px;
+    /* укажите нужное значение */
+    left: 748px;
+    /* укажите нужное значение */
+    /* Дополнительно можно задать размеры */
+    width: 612px;
+    height: 816px;
+}
+
+.app_section_title {
+    width: 1280px;
+    height: 114px;
+}
+
+.app_section_title h3 {
+    font-family: 'Furore', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.app_section_title p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4F4F4F;
+}
+
+.app_advantage {
+    width: 759px;
+    height: 152px;
+    border-radius: 12px;
+    background-color: #E7FAEF;
+    margin-top: 24px;
+    position: relative;
+}
+
+.app_advantage_icon {
+    position: absolute;
+}
+
+.app_advantage_icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.app_advantage_p {
+    position: absolute;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.icon1{
+    top: 24px;
+    left: 24px;
+}
+
+.icon2{
+    top: 88px;
+    left: 24px;
+}
+
+.icon3{
+    top: 24px;
+    left: 387px;
+}
+
+.icon4{
+    top: 88px;
+    left: 387px;
+}
+
+.p1{
+    top: 32px;
+    left: 80px;
+}
+
+.p2{
+    top: 96px;
+    left: 80px;
+}
+
+.p3{
+    top: 32px;
+    left: 443px;
+}
+
+.p4{
+    top: 96px;
+    left: 443px;
+}
+
+.functions_list{
+    margin-top: 36px;
+}
+
+.functions_list h4{
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.functions_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 16px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4F4F4F;
+}
+.functions_list ul li {
+    font-family: 'Gilroy-Light', sans-serif;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+}
+.functions_list ul li::before {
+    font-family: 'Gilroy-Light', sans-serif;
+    content: "•";
+    color: #27AE60;
+    font-size: 22px;
+    position: absolute;
+    padding-left: 11px;
+    left: 0;
+    top: 0;
+}
 /* Sale Screen */
 
 /* Poster Screen */
