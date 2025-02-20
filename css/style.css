@@ -630,12 +630,10 @@ td:first-child {
     font-size: 36px;
     font-weight: 400;
     color: #333333;
-    position: absolute;
-    top: 0;
-    left: 0;
+    margin-bottom: 24px;
 }
 
-.app_section_title p {
+.app_section p {
     font-family: 'Gilroy-Light', sans-serif;
     font-size: 18px;
     font-weight: 400;
