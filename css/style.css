@@ -622,14 +622,15 @@ td:first-child {
     /* Дополнительно можно задать размеры */
     width: 612px;
     height: 816px;
+    z-index: 1;
 }
 
-.app_section_title {
+.app_title {
     width: 1280px;
     height: 114px;
 }
 
-.app_section_title h3 {
+.app_section h3 {
     font-family: 'Furore', sans-serif;
     font-size: 36px;
     font-weight: 400;
