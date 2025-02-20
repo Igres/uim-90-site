@@ -630,10 +630,9 @@ td:first-child {
     font-size: 36px;
     font-weight: 400;
     color: #333333;
-}
-
-.app_title {
-    margin-bottom: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .app_section_title p {
