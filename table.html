@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблица характеристик</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff;
+        }
+
+        table {
+            width: 1280px;
+            height: 700px;
+            border-collapse: collapse;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #444;
+            color: white;
+            font-family: 'Furore', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            padding: 0;
+            height: 70px;
+        }
+
+        td {
+            font-family: 'Gilroy-Light', sans-serif;
+            font-size: 18px;
+            height: 70px;
+            padding: 0;
+            text-align: center;
+            border-left: 2px dashed #ccc;
+        }
+
+        td:first-child {
+            border-left: none;
+        }
+
+        .semibold {
+            font-weight: 600;
+            padding-left: 36px;
+            text-align: left;
+        }
+
+        .th_column_1 {
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+
+        }
+
+        .th_column_2 {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .regular {
+            font-weight: 400;
+        }
+
+        .gray {
+            background-color: #f7f7f7;
+        }
+
+        .green {
+            background-color: #E7FAEF;
+        }
+
+        @font-face {
+            font-family: 'Furore';
+            src: url('../fonts/Furore.otf') format('opentype');
+            /* Исправлено */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Gilroy-ExtraBold';
+            src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Gilroy-Light';
+            src: url('../fonts/Gilroy-Light.otf') format('opentype');
+            font-weight: lighter;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th class="th_column_1">ХАРАКТЕРИСТИКА</th>
+            <th class="th_column_2">UIM-90</th>
+        </tr>
+        <tr class="gray">
+            <td class="semibold">Диапазон выпробувальної напруги</td>
+            <td class="regular">10–90 кВ (можливість до 100 кВ)</td>
+        </tr>
+        <tr class="green">
+            <td class="semibold">Точність вимірювання</td>
+            <td class="regular">±1,5%</td>
+        </tr>
+        <tr class="gray">
+            <td class="semibold">Автоматичне тестування</td>
+            <td class="regular">Так</td>
+        </tr>
+        <tr class="green">
+            <td class="semibold">Компактні габарити</td>
+            <td class="regular">520×335×320 мм</td>
+        </tr>
+        <tr class="gray">
+            <td class="semibold">Міцний металевий корпус</td>
+            <td class="regular">Так</td>
+        </tr>
+        <tr class="green">
+            <td class="semibold">Універсальне живлення</td>
+            <td class="regular">Мережа/Акумулятор</td>
+        </tr>
+        <tr class="gray">
+            <td class="semibold">Мала вага</td>
+            <td class="regular">28 кг</td>
+        </tr>
+        <tr class="green">
+            <td class="semibold">Зв’язок з ПК</td>
+            <td class="regular">Бездротовий/Наявність ПЗ</td>
+        </tr>
+        <tr class="gray">
+            <td class="semibold">Відповідність стандартам</td>
+            <td class="regular">IEC 60156, ГОСТ 6581, ASTM D877 та інші</td>
+        </tr>
+    </table>
+</body>
+
+</html>

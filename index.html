@@ -65,37 +65,144 @@
             </div>
         </section>
 
-        <section class="slider">
-            <div class="slider_title">
-                <h3>ПЕРЕВАГИ UIM-90</h3>
-                <div class="btn_container">
-                    <button class="btn_back"></button>
-                    <button class="btn_forward"></button>
-                </div>
-
-            </div>
-            <div class="slider_content">
-
-            </div>
+        <section class="slider_content">
         </section>
 
+        <section class="table_section">
+            <table>
+                <tr>
+                    <th class="th_column_1">ХАРАКТЕРИСТИКА</th>
+                    <th class="th_column_2">UIM-90</th>
+                </tr>
+                <tr class="gray">
+                    <td class="semibold">Диапазон выпробувальної напруги</td>
+                    <td class="regular">10–90 кВ (можливість до 100 кВ)</td>
+                </tr>
+                <tr class="green">
+                    <td class="semibold">Точність вимірювання</td>
+                    <td class="regular">±1,5%</td>
+                </tr>
+                <tr class="gray">
+                    <td class="semibold">Автоматичне тестування</td>
+                    <td class="regular">Так</td>
+                </tr>
+                <tr class="green">
+                    <td class="semibold">Компактні габарити</td>
+                    <td class="regular">520×335×320 мм</td>
+                </tr>
+                <tr class="gray">
+                    <td class="semibold">Міцний металевий корпус</td>
+                    <td class="regular">Так</td>
+                </tr>
+                <tr class="green">
+                    <td class="semibold">Універсальне живлення</td>
+                    <td class="regular">Мережа/Акумулятор</td>
+                </tr>
+                <tr class="gray">
+                    <td class="semibold">Мала вага</td>
+                    <td class="regular">28 кг</td>
+                </tr>
+                <tr class="green">
+                    <td class="semibold">Зв’язок з ПК</td>
+                    <td class="regular">Бездротовий/Наявність ПЗ</td>
+                </tr>
+                <tr class="gray">
+                    <td class="semibold">Відповідність стандартам</td>
+                    <td class="regular">IEC 60156, ГОСТ 6581, ASTM D877 та інші</td>
+                </tr>
+            </table>
+        </section>
+        <section class="advantage_section">
+            <img src="img/background_advantage_left.svg" alt="" class="background_advantage_left">
+            <img src="img/background_advantage_right.svg" alt="" class="background_advantage_right">
+            <div class="blur-circle position-1"></div>
+            <div class="blur-circle position-2"></div>
+            <img src="img/Ellipse_advantages.svg" alt="" class="background_elipse">
+            <div class="blur-circle position-3"></div>
+            <div class="blur-circle position-4"></div>
+            <div class="blur-circle position-5"></div>
+            <img src="img/device_2.png" alt="" class="background_advantage_device">
+            <img src="img/bluetooth.svg" alt="" class="background_advantage_bluetooth">
+            <img src="img/advantage_monitor.svg" alt="" class="background_advantage_monitor">
+            <img src="img/print.svg" alt="" class="background_advantage_print">
+            <h3>Переваги пристрою <br> з бездротовим звʼязком</h3>
+            <p class="p_left">Можливість бездротового керування пристроєм з ПК</p>
+            <p class="p_right">Можливість підключення<br>до ПК до 8 пристроїв з умовою їх одночасної роботи</p>
+            <p class="p_bottom">Наявність програмного забезпечення, що дозволяє зберігати,<br>обробляти та друкувати
+                результати випробувань</p>
+        </section>
+        <section class="app_section"></section>
+
     </div>
+
     <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            const sliderContainer = document.querySelector(".slider_content");
+
+            try {
+                const response = await fetch("slider.html");
+                if (!response.ok) throw new Error("Ошибка загрузки слайдера");
+
+                const sliderHTML = await response.text();
+                sliderContainer.innerHTML = sliderHTML;
+
+                // Инициализируем скрипты слайдера, если они есть
+                const scripts = sliderContainer.querySelectorAll("script");
+                scripts.forEach(script => {
+                    const newScript = document.createElement("script");
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                });
+
+            } catch (error) {
+                console.error("Ошибка загрузки слайдера:", error);
+            }
+        });
+    </script>
+
+
+    <script>
+        let baseWidth = 1440;
+        let baseHeight = 900;
+
+        let scaleWrapper = document.querySelector('.scale-wrapper');
+        let body = document.body;
+
         function scaleContent() {
-            const baseWidth = 1440;
-            const baseHeight = 900;
+
             const screenWidth = document.documentElement.clientWidth;
             const screenHeight = document.documentElement.clientHeight;
 
-            // Добавляем небольшой запас (уменьшаем scale)
-            const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight) * 0.95;
+            // Вычисляем коэффициент масштабирования
+            //const scaleFactor = Math.min(screenWidth / baseWidth, screenHeight / baseHeight);
+            //const scaleFactor = screenWidth / baseWidth;
+            const scaleFactor = Math.round((screenHeight / baseHeight) * 10) / 10;
+            console.log(scaleFactor);
 
-            document.querySelector('.scale-wrapper').style.transform =
-                `scale(${scaleFactor}) translate(-50%)`;
+            scaleWrapper.style.transform = `scale(${scaleFactor})`;
+
+            // Вычисляем margin для центрирования
+            const margin = (screenWidth - baseWidth * scaleFactor) / 2;
+
+            // Применяем margin только по горизонтали
+            scaleWrapper.style.margin = `0 ${margin}px`;
+            console.log(margin);
+        }
+        function updateContent() {
+            const screenHeight = document.documentElement.clientHeight;
+            const scaleFactor = Math.round((screenHeight / baseHeight) * 10) / 10;
+            console.log(scaleFactor);
+
+            if (scaleFactor > 1) {
+                body.style.alignItems = "center";
+            } else {
+                body.style.alignItems = "start";
+            }
+
         }
         // Вызываем при загрузке и изменении размера окна
         scaleContent();
-        //window.addEventListener('resize', scaleContent);
+        window.addEventListener('resize', updateContent);
     </script>
 </body>
 
