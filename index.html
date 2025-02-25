@@ -174,7 +174,26 @@
                     <li>Технічна підтримка та оновлення</li>
                 </ul>
             </div>
+            <div class="download-container">
+                <div class="download-section">
+                    <p class="download-title">Версія 1.01.ZIP:</p>
+                    <button class="download-button">
+                        <img src="img/download-file.svg" alt="Download" class="button-icon">
+                        ЗАВАНТАЖИТИ
+                    </button>
+                </div>
+                <div class="download-section">
+                    <p class="download-title">Версія 1.02.ZIP:</p>
+                    <button class="download-button">
+                        <img src="img/download-file.svg" alt="Download" class="button-icon">
+                        ЗАВАНТАЖИТИ
+                    </button>
+                </div>
+            </div>
 
+        </section>
+
+        <section class="device_map">
         </section>
 
     </div>
@@ -185,6 +204,28 @@
 
             try {
                 const response = await fetch("slider.html");
+                if (!response.ok) throw new Error("Ошибка загрузки слайдера");
+
+                const sliderHTML = await response.text();
+                sliderContainer.innerHTML = sliderHTML;
+
+                // Инициализируем скрипты слайдера, если они есть
+                const scripts = sliderContainer.querySelectorAll("script");
+                scripts.forEach(script => {
+                    const newScript = document.createElement("script");
+                    newScript.textContent = script.textContent;
+                    document.body.appendChild(newScript);
+                });
+
+            } catch (error) {
+                console.error("Ошибка загрузки слайдера:", error);
+            }
+        });
+        document.addEventListener("DOMContentLoaded", async function () {
+            const sliderContainer = document.querySelector(".device_map");
+
+            try {
+                const response = await fetch("image_selector.html");
                 if (!response.ok) throw new Error("Ошибка загрузки слайдера");
 
                 const sliderHTML = await response.text();
