@@ -1085,6 +1085,125 @@ td:first-child {
 
 /* Poster Screen */
 
+
+.poster_section {
+    width: 1280px;
+    height: 900px;
+    margin: 0;
+    margin-top: 80px;
+    position: relative;
+}
+
+.poster_background {
+    position: absolute;
+    width: 1280px;
+    height: 899px;
+    z-index: 0;
+}
+
+.poster_line1{
+    position: absolute;
+    z-index: 3;
+    top: 460px;
+    left: 897px;
+    width: 80px;
+    height: 120px;
+}
+
+.poster_line2{
+    position: absolute;
+    z-index: 3;
+    top: 342px;
+    left: 531px;
+    width: 140px;
+    height: 80px;
+}
+
+.poster_line3{
+    position: absolute;
+    z-index: 3;
+    top: 625px;
+    left: 295px;
+    width: 84px;
+    height: 210px;
+}
+
+.poster_line4{
+    position: absolute;
+    z-index: 3;
+    top: 734px;
+    left: 853px;
+    width: 140px;
+    height: 80px;
+}
+
+.poster_line5{
+    position: absolute;
+    z-index: 3;
+    top: 480px;
+    left: 211px;
+    width: 231px;
+    height: 17px;
+}
+
+.poster_section p{
+    font-family: 'Furore', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.text1{
+    position: absolute;
+    left: 987px;
+    top: 460px;
+}
+
+.text2{
+    position: absolute;
+    left: 360px;
+    top: 304px;
+}
+
+.text3{
+    position: absolute;
+    left: 305px;
+    top: 783px;
+}
+
+.text4{
+    position: absolute;
+    left: 873px;
+    top: 776px;
+}
+
+.text5{
+    position: absolute;
+    left: 211px;
+    top: 442px;
+}
+
+.poster_blur_ellipse{
+    position: absolute;
+    width: 800px;
+    height: 422px;
+    border-radius: 50%;
+    background-color: #A5D7BA;
+    filter: blur(150px);
+    z-index: 1;
+    left: 240px;
+    top: 412px;
+
+}
+
+.poster_device {
+    position: absolute;
+    width: 565px;
+    height: 350px;
+    z-index: 2;
+    left: 347px;
+    top: 406px;
+}
 /* Docs Screen */
 
 /* History Screen */
