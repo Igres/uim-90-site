@@ -1253,7 +1253,88 @@ td:first-child {
 
 /* History Screen */
 
+
+.history_section{
+    width: 1280px;
+    height: 564px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.history_section h1{
+    padding-left: 70px;
+    font-family: 'Furore', sans-serif;
+    font-size: 84px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.history_container{
+    margin-top: 36px;
+}
+
+.history_images{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.history_vector {
+    position: absolute;
+    z-index: 1;
+    left: 196px;
+}
+
+.history_blur_circle {
+    position: absolute;
+    width: 315px;
+    height: 315px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 2;
+    top: 53px;
+    left: 66px;
+}
+
+.history_device{
+    position: absolute;
+    width: 431px;
+    height: 490px;
+    top: 60px;
+    left: -35px;
+    z-index: 3;
+}
+
+.history_desc{
+    position: absolute;
+    left: 580px;
+}
+.history_desc p{
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4F4F4F;
+    line-height: 1.5;
+}
+.indent{
+    height: 24px;
+}
+
+.history_desc button{
+    margin-top: 24px;
+}
+
 /* Contact Screen */
+
+.contact_section{
+    width: 1280px;
+    height: 858px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Feedback Screen */
 
