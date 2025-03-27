@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переключаемый контент</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .contact_container {
+            display: flex;
+            justify-content: space-between;
+            width: 900px;
+            margin: 20px auto;
+        }
+
+        .contact_sidebar {
+            width: 60%;
+        }
+
+        .contact_content {
+            display: none;
+        }
+
+        .contact_content.active {
+            display: block;
+        }
+
+        .contact_right-column {
+            width: 35%;
+            font-weight: bold;
+        }
+
+        .contact_toggle-buttons {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .contact_toggle-button {
+            width: 294px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            background-color: transparent;
+            color: #333;
+            border: 2px solid #27AE60;
+            margin-right: 10px;
+        }
+
+        .contact_toggle-button.active {
+            background-color: #27AE60;
+            color: #FFFFFF;
+        }
+
+        .contact_card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .contact_card h3 {
+            margin: 0;
+        }
+
+        .contact_icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact_toggle-buttons">
+    <div class="contact_toggle-button active" onclick="showContactContent(0)">ТОВ ПКФ Молнія</div>
+    <div class="contact_toggle-button" onclick="showContactContent(1)">ТОВ НВП Еталон-Прилад</div>
+</div>
+
+<div class="contact_container">
+    <div class="contact_sidebar">
+        <div class="contact_content active" id="contact_content1">
+            <div class="contact_card">
+                <h3>ТОВ ПКФ Молнія</h3>
+                <p><img class="contact_icon" src="location.svg" alt="Адрес"> Адреса офісу: 61145, м. Харків, просп. Науки, 40</p>
+                <p><img class="contact_icon" src="mail.svg" alt="Почта"> Поштова адреса: 61145, м. Харків, п/с 9521</p>
+                <p><img class="contact_icon" src="phone.svg" alt="Телефон"> Телефон / Факс: +38 (057) 758-16-73</p>
+                <p><img class="contact_icon" src="website.svg" alt="Вебсайт"> Вебсайт: <a href="http://www.molnia.kharkov.ua">www.molnia.kharkov.ua</a></p>
+                <p><img class="contact_icon" src="email.svg" alt="Email"> E-mail: sales@uim-90.com</p>
+            </div>
+        </div>
+
+        <div class="contact_content" id="contact_content2">
+            <div class="contact_card">
+                <h3>ТОВ НВП Еталон-Прилад</h3>
+                <p><img class="contact_icon" src="location.svg" alt="Адрес"> Адреса офісу: 61045, м. Харків, вул. Клочківська, 295</p>
+                <p><img class="contact_icon" src="phone.svg" alt="Телефон"> Телефон / Факс: +38 (057) 717-51-56, +38 (057) 717-03-46</p>
+                <p><img class="contact_icon" src="website.svg" alt="Вебсайт"> Вебсайт: <a href="http://www.etalonpribor.com.ua">www.etalonpribor.com.ua</a></p>
+                <p><img class="contact_icon" src="email.svg" alt="Email"> E-mail: info@etalonpribor.com.ua</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact_right-column">
+        <h3>З ТЕХНІЧНИХ ПИТАНЬ:</h3>
+        <p><img class="contact_icon" src="location.svg" alt="Адрес"> Адреса: м. Харків, Україна</p>
+        <p><img class="contact_icon" src="phone.svg" alt="Телефон"> Телефон: +38 (068) 880 9947 (Viber, Telegram)</p>
+        <p>+38 (050) 343 3041 (Viber, Telegram)</p>
+        <p><img class="contact_icon" src="website.svg" alt="Вебсайт"> Вебсайт: <a href="https://uim-90.com">https://uim-90.com</a></p>
+        <p><img class="contact_icon" src="email.svg" alt="Email"> E-mail: sales@uim-90.com</p>
+    </div>
+</div>
+
+<script>
+    function showContactContent(index) {
+        let contents = document.querySelectorAll(".contact_content");
+        let buttons = document.querySelectorAll(".contact_toggle-button");
+
+        contents.forEach((content, i) => {
+            content.classList.toggle("active", i === index);
+        });
+
+        buttons.forEach((button, i) => {
+            button.classList.toggle("active", i === index);
+        });
+    }
+</script>
+
+</body>
+</html>

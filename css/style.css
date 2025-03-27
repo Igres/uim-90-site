@@ -1101,7 +1101,7 @@ td:first-child {
     z-index: 0;
 }
 
-.poster_line1{
+.poster_line1 {
     position: absolute;
     z-index: 3;
     top: 460px;
@@ -1110,7 +1110,7 @@ td:first-child {
     height: 120px;
 }
 
-.poster_line2{
+.poster_line2 {
     position: absolute;
     z-index: 3;
     top: 342px;
@@ -1119,7 +1119,7 @@ td:first-child {
     height: 80px;
 }
 
-.poster_line3{
+.poster_line3 {
     position: absolute;
     z-index: 3;
     top: 625px;
@@ -1128,7 +1128,7 @@ td:first-child {
     height: 210px;
 }
 
-.poster_line4{
+.poster_line4 {
     position: absolute;
     z-index: 3;
     top: 734px;
@@ -1137,7 +1137,7 @@ td:first-child {
     height: 80px;
 }
 
-.poster_line5{
+.poster_line5 {
     position: absolute;
     z-index: 3;
     top: 480px;
@@ -1146,44 +1146,44 @@ td:first-child {
     height: 17px;
 }
 
-.poster_section p{
+.poster_section p {
     font-family: 'Furore', sans-serif;
     font-size: 24px;
     font-weight: 400;
     color: #ffffff;
 }
 
-.text1{
+.text1 {
     position: absolute;
     left: 987px;
     top: 460px;
 }
 
-.text2{
+.text2 {
     position: absolute;
     left: 360px;
     top: 304px;
 }
 
-.text3{
+.text3 {
     position: absolute;
     left: 305px;
     top: 783px;
 }
 
-.text4{
+.text4 {
     position: absolute;
     left: 873px;
     top: 776px;
 }
 
-.text5{
+.text5 {
     position: absolute;
     left: 211px;
     top: 442px;
 }
 
-.poster_blur_ellipse{
+.poster_blur_ellipse {
     position: absolute;
     width: 800px;
     height: 422px;
@@ -1204,11 +1204,12 @@ td:first-child {
     left: 347px;
     top: 406px;
 }
+
 /* Docs Screen */
 
 
-.docs_section{
-    width:1280px;
+.docs_section {
+    width: 1280px;
     height: 567px;
     margin-top: 80px;
     text-align: center;
@@ -1233,7 +1234,8 @@ td:first-child {
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем кнопку */
+    align-items: center;
+    /* Центрируем кнопку */
 }
 
 .docs_img {
@@ -1254,7 +1256,7 @@ td:first-child {
 /* History Screen */
 
 
-.history_section{
+.history_section {
     width: 1280px;
     height: 564px;
     margin-top: 80px;
@@ -1262,7 +1264,7 @@ td:first-child {
     flex-direction: column;
 }
 
-.history_section h1{
+.history_section h1 {
     padding-left: 70px;
     font-family: 'Furore', sans-serif;
     font-size: 84px;
@@ -1270,11 +1272,11 @@ td:first-child {
     color: #333333;
 }
 
-.history_container{
+.history_container {
     margin-top: 36px;
 }
 
-.history_images{
+.history_images {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1298,7 +1300,7 @@ td:first-child {
     left: 66px;
 }
 
-.history_device{
+.history_device {
     position: absolute;
     width: 431px;
     height: 490px;
@@ -1307,34 +1309,251 @@ td:first-child {
     z-index: 3;
 }
 
-.history_desc{
+.history_desc {
     position: absolute;
     left: 580px;
 }
-.history_desc p{
+
+.history_desc p {
     font-family: 'Gilroy-Light', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #4F4F4F;
     line-height: 1.5;
 }
-.indent{
+
+.indent {
     height: 24px;
 }
 
-.history_desc button{
+.history_desc button {
     margin-top: 24px;
 }
 
+.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+#modal {
+    position: absolute;
+    /* Вместо fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для модального окна */
+dialog {
+    left: 80px;
+    width: 70vw;
+    max-width: 1280px;
+    max-height: 900px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    /* Исключаем лишние скроллы */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+dialog::backdrop {
+    background: rgba(217, 217, 217, 0.5);
+}
+
+/* Контент внутри */
+.modal-content {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    /* Скролл внутри */
+}
+
+/* Контейнер с колонками */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-grow: 1;
+    /* Заполняем пространство */
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.column img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* После колонок – текст на всю ширину */
+.full-width {
+    flex-shrink: 0;
+    /* Не сжимается */
+    margin-top: 20px;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
 /* Contact Screen */
 
-.contact_section{
+.contact_section {
     width: 1280px;
     height: 858px;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    align-items: center;
 }
+
+.contact_section h1 {
+    font-family: 'Furore', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.contact_section p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4F4F4F;
+}
+
+.toggle-container {
+    margin-top: 24px;
+    width: 618px;
+    height: 76px;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.toggle-button {
+    width: 294px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.active_button {
+    background-color: #27AE60;
+    color: #FFFFFF;
+}
+
+.inactive_button {
+    background-color: transparent;
+    color: #333333;
+}
+
+.toggle-button+.toggle-button {
+    margin-left: 10px;
+}
+
+
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    width: 1058px;
+}
+
+.contact_sidebar {
+    width: 50%;
+}
+
+.contact_content {
+    display: none;
+}
+
+.contact_content.active_card {
+    display: block;
+}
+
+.contact_right-column {
+    display: block;
+}
+
+.contact_card {
+    align-items: left;
+    text-align: left;
+    margin-top: 48px;
+}
+
+.contact_card a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.contact_card h1 {
+    margin: 0;
+    margin-top: 66px;
+    margin-bottom: 32px;
+    font-family: 'Furore', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.contact_card h3 {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact_card p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.contact_icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.venko {
+    margin-top: 26px;
+}
+
 
 /* Feedback Screen */
 

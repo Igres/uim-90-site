@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правильное модальное окно</title>
+    <style>
+        body.modal-open {
+            overflow: hidden; /* Отключаем прокрутку страницы при открытии */
+        }
+
+        /* Стили для модального окна */
+        dialog {
+            width: 70vw;
+            max-width: 900px;
+            max-height: 80vh;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Исключаем лишние скроллы */
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Контент внутри */
+        .modal-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Контейнер с колонками */
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            flex-grow: 1; /* Заполняем пространство */
+            overflow-y: auto; /* Скролл внутри */
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .column img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* После колонок – текст на всю ширину */
+        .full-width {
+            flex-shrink: 0; /* Не сжимается */
+            margin-top: 20px;
+        }
+
+        /* Кнопка закрытия */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="openModal">Открыть модальное окно</button>
+
+    <dialog id="modal">
+        <span class="close-btn" id="closeModal">&times;</span>
+
+        <div class="modal-content">
+            <div class="columns">
+                <div class="column">
+                    <h3>Технические характеристики UIM-90</h3>
+                    <ul>
+                        <li><strong>Пробивная нагрузка:</strong> 90 кВ</li>
+                        <li><strong>Погрешность измерения:</strong> 4%</li>
+                        <li><strong>Габариты:</strong> 530×325×345 мм</li>
+                        <li><strong>Масса:</strong> 50 кг</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <img src="https://via.placeholder.com/300" alt="Изображение прибора">
+                </div>
+            </div>
+
+            <div class="full-width">
+                <h4>Эволюция UIM-90</h4>
+                <p>В 2007 году, с переходом на микропроцессорную базу, устройство UIM-90 получило кардинальные обновления...</p>
+                <p>В 2013-2014 годах проведена модернизация UIM-90 (серия 220), связанная с необходимостью хранения результатов испытаний...</p>
+                <p>Также были улучшены алгоритмы работы, что позволило добиться большей точности измерений...</p>
+                <p>Процесс модернизации устройства не останавливается, ведутся работы над новыми версиями программного обеспечения...</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        openBtn.onclick = function() {
+            modal.showModal(); // Открываем модальное окно
+            document.body.classList.add("modal-open"); // Запрещаем прокрутку фона
+        }
+
+        closeBtn.onclick = function() {
+            modal.close(); // Закрываем модальное окно
+            document.body.classList.remove("modal-open");
+        }
+
+        modal.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.close();
+                document.body.classList.remove("modal-open");
+            }
+        });
+    </script>
+
+</body>
+</html>
