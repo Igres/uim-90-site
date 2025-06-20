@@ -1,0 +1,2160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy-Light', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: #4F4F4F;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Чтобы содержимое шло вниз */
+    align-items: start;
+}
+
+.scale-wrapper {
+    width: 768px;
+    margin: 0 0;
+    /* Центрируем по горизонтали */
+    display: flex;
+    flex-direction: column;
+    /* Чтобы содержимое шло вниз */
+    align-items: center;
+    /* Выравниваем вложенные элементы по центру */
+    transform-origin: top left;
+    transform: scale(1);
+    background-color: white;
+}
+
+/* Header Section */
+
+
+.header {
+    width: 688px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+.header_menu {
+    width: 688px;
+    height: 76px;
+    background-color: #EEFCF4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    border-radius: 12px;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+}
+
+.header_menu .logo {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 24px;
+    width: 154px;
+    height: 40px;
+}
+
+
+.header_menu .language-btn {
+    width: 174px;
+    height: 56px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 0 16px;
+    box-shadow: inset 0px 4px 6px 3px #4F4F4F;
+}
+
+.header_menu .language-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.menu_buttons_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.menu-toggle {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: none;
+    margin-right: 24px;
+}
+
+.menu-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+#side_menu{
+    position: absolute;
+    left: 58%;
+    width: 42%;
+    background: #E7FAEF;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+
+dialog.sidenav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    animation: slideIn 0.3s ease-in-out;
+    background: white;
+    z-index: 1000;
+}
+
+dialog.sidenav::backdrop {
+    background: rgba(255, 255, 255, 0.15); /* Светлый полупрозрачный цвет */
+    backdrop-filter: blur(10px); /* Эффект размытия */
+    -webkit-backdrop-filter: blur(10px); /* Для Safari */
+}
+
+.close-btn-menu {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    width: 56px;
+    height: 56px;
+    background-color: #fff;
+    padding-left: 10px;
+    padding-top: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.menu-content {
+    margin-top: 146px;
+    margin-left: 36px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6.25vw;;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 2.343vw;
+    font-weight: 600;
+    color: #4F4F4F;
+}
+
+.menu-content a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s ease;
+}
+
+.menu-content a:hover {
+    color: #67b16b;
+}
+
+/* Firstscreen Section */
+
+
+.fscreen {
+    width: 688px;
+    height: 921px;
+    display: flex;
+    border-radius: 12px;
+    margin: 0 40px;
+    background-color: #f2f2f2;
+}
+
+.fscreen_content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 688px;
+}
+
+.fscreen_vec1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 12px;
+    z-index: 1;
+}
+
+.fscreen_vec2 {
+    position: absolute;
+    top: 360px;
+    left: 235px;
+    z-index: 1;
+}
+
+.blur-circle {
+    position: absolute;
+    width: 271px;
+    height: 271px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(40px);
+    left: 10px;
+    top: 35px;
+    z-index: 2;
+}
+
+.circle1 {
+    position: absolute;
+    width: 294px;
+    height: 294px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(40px);
+    left: 199px;
+    top: 510px;
+    z-index: 2;
+}
+
+.circle2 {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(50px);
+    left: -38px;
+    top: 455px;
+    z-index: 2;
+}
+
+.circle3 {
+    position: absolute;
+    width: 285px;
+    height: 285px;
+    background: rgba(231, 250, 239, 1);
+    border-radius: 50%;
+    filter: blur(40px);
+    left: 14px;
+    top: 536px;
+    z-index: 3;
+}
+
+.circle4 {
+    position: absolute;
+    width: 252px;
+    height: 59px;
+    background: rgba(51, 51, 51, 1);
+    border-radius: 50%;
+    filter: blur(70px);
+    left: 74px;
+    top: 765px;
+    z-index: 4;
+}
+
+.circle5 {
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    background: rgba(51, 51, 51, 1);
+    border-radius: 50%;
+    filter: blur(70px);
+    left: 212px;
+    top: 606px;
+    z-index: 4;
+}
+
+.device {
+    position: absolute;
+    width: 312px;
+    height: 375px;
+    top: 468px;
+    left: 29px;
+    z-index: 5;
+}
+
+.fscreen_content h1 {
+    position: absolute;
+    top: 80px;
+    left: 64px;
+    z-index: 5;
+
+    font-family: 'Furore', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.fscreen_about {
+    position: absolute;
+    top: 160px;
+    left: 64px;
+    z-index: 5;
+
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.order-btn {
+    position: absolute;
+    top: 265px;
+    left: 64px;
+    width: 223px;
+    height: 56px;
+    z-index: 5;
+
+    background: #219653;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    box-shadow: 0px 5px 20px -2px rgba(33, 150, 83, 0.5), inset 0px 4px 6px 3px rgba(39, 174, 96, 1);
+}
+
+.order-btn:hover {
+    background: #16A34A;
+    box-shadow: 0px 5px 20px -2px rgba(22, 163, 74, 0.5), inset 0px 4px 6px 3px rgba(34, 197, 94, 1);
+}
+
+
+.block1 {
+    position: absolute;
+    top: 465px;
+    left: 417px;
+    height: 112px;
+    z-index: 6;
+}
+
+.block2 {
+    position: absolute;
+    top: 597px;
+    left: 417px;
+    height: 112px;
+    z-index: 6;
+}
+
+.block3 {
+    position: absolute;
+    top: 729px;
+    left: 417px;
+    height: 112px;
+    z-index: 6;
+}
+
+
+.advantage img {
+    width: 50px;
+    height: 50px;
+}
+
+.advantage h2 {
+    font-family: 'Furore', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    color: #333333;
+    line-height: 1.5;
+
+}
+
+.advantage p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.fscreen_content_image {
+    position: absolute;
+    top: 545px;
+    left: 246px;
+    width: 181px;
+    height: 181px;
+    z-index: 6;
+}
+
+
+/* Slider Screen */
+
+
+.slider {
+    width: 688px;
+    height: 288px;
+    display: flex;
+    flex-direction: column;
+    /* Добавлено */
+    align-items: center;
+    /* Чтобы центрировать содержимое */
+    margin-top: 36px;
+}
+
+.slider_title {
+    width: 688px;
+    display: flex;
+}
+
+.slider_title h3 {
+    width: 640px;
+    font-family: 'Furore', sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    color: #333333;
+}
+
+.btn_container {
+    width: 344px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn_back {
+    width: 56px;
+    height: 56px;
+    background: url('../img/back.svg') no-repeat center;
+    background-size: cover;
+    border: none;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.btn_forward {
+    width: 56px;
+    height: 56px;
+    background: url('../img/forward.svg') no-repeat center;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.slider_content {
+    width: 688px;
+}
+
+.slider-container {
+    position: relative;
+    width: 688px;
+    height: 220px;
+    overflow: hidden;
+    margin: 12px 0 0 0;
+}
+
+.slider-track {
+    display: flex;
+    width: max-content;
+    gap: 14px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 220px;
+    height: 220px;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    /* Располагаем элементы вертикально */
+    justify-content: space-between;
+    /* svg уходит вверх, p прижимается вниз */
+    padding: 30px 20px 20px 20px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333333;
+    border-radius: 12px;
+    user-select: none;
+    line-height: 1.5;
+}
+
+.slide_svg {
+    align-self: flex-start;
+    /* Выравниваем слева */
+}
+
+.slide p {
+    width: 200px;
+    font-family: 'Gilroy-Light', sans-serif;
+}
+
+.slider-buttons {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.slider-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+/* Table Screen */
+
+
+.table_section {
+    width: 688px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    /* Добавлено */
+    align-items: center;
+    /* Чтобы центрировать содержимое */
+    margin: 48px 40px 0 40px;
+}
+
+table {
+    width: 688px;
+    height: 500px;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    width: 50%;
+    background-color: #444;
+    color: white;
+    font-family: 'Furore', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    padding: 0;
+    height: 50px;
+}
+
+td {
+    width: 50%;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    padding: 0;
+    text-align: center;
+
+    border-left: 2px dashed #ccc;
+}
+
+td:first-child {
+    border-left: none;
+}
+
+.semibold {
+    font-weight: 600;
+    padding-left: 36px;
+    text-align: left;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.th_column_1 {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+}
+
+.th_column_2 {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.regular {
+    font-weight: 400;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.gray {
+    background-color: #f7f7f7;
+}
+
+.green {
+    background-color: #E7FAEF;
+}
+
+
+
+/* Advantages Screen */
+
+
+.advantage_section {
+    width: 768px;
+    height: 505px;
+    display: flex;
+    flex-direction: column;
+    /* Добавлено */
+    align-items: center;
+    /* Чтобы центрировать содержимое */
+    margin: 36px 40px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.background_advantage_left {
+    position: absolute;
+    z-index: 1;
+    top: 87px;
+    left: 0px;
+}
+
+.background_advantage_right {
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+}
+
+.blur-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(35px);
+    z-index: 2;
+}
+
+.position-1 {
+    left: 0px;
+    top: 71px;
+}
+
+.position-2 {
+    left: 526px;
+    top: 47px;
+}
+
+.position-3 {
+    width: 200px;
+    height: 200px;
+    top: 183px;
+    left: 284px;
+    background: #D6F9E5;
+    filter: none;
+    z-index: 3;
+}
+
+.position-4 {
+    top: 200px;
+    left: 318px;
+    width: 140px;
+    height: 140px;
+    background: #1F653D;
+    filter: blur(55px);
+    z-index: 4;
+}
+
+.position-5 {
+    top: 337px;
+    left: 327px;
+    width: 121px;
+    height: 29px;
+    background: #1F653D;
+    filter: blur(20px);
+    z-index: 4;
+}
+
+.background_advantage_device {
+    position: absolute;
+    width: 118px;
+    height: 147px;
+    z-index: 5;
+    top: 210px;
+    left: 325px;
+}
+
+.background_elipse {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    z-index: 3;
+    top: 158px;
+    left: 259px;
+}
+
+.background_advantage_bluetooth {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+    top: 171px;
+    left: 250px;
+}
+
+.background_advantage_monitor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+    top: 144px;
+    left: 455px;
+}
+
+.background_advantage_print {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+    top: 398px;
+    left: 363px;
+}
+
+.advantage_section h3 {
+    position: absolute;
+    width: 500px;
+    height: 62px;
+    left: 134px;
+    top: 39px;
+    text-align: center;
+    font-family: 'Furore', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #333333;
+    z-index: 6;
+}
+
+.advantage_section p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+}
+
+.p_left {
+    position: absolute;
+    left: 29px;
+    top: 175px;
+    width: 204px;
+    height: 42px;
+    z-index: 4;
+    line-height: 1.5;
+}
+
+.p_right {
+    position: absolute;
+    left: 520px;
+    top: 137px;
+    width: 268px;
+    height: 63px;
+    z-index: 4;
+    line-height: 1.5;
+}
+
+.p_bottom {
+    position: absolute;
+    left: 254px;
+    top: 462px;
+    width: 261px;
+    height: 42px;
+    z-index: 4;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+/* App Screen */
+
+
+.app_section {
+    width: 688px;
+    height: 711px;
+    display: flex;
+    flex-direction: column;
+    /* Добавлено */
+    /* Чтобы центрировать содержимое */
+    margin-top: 48px;
+    position: relative;
+}
+
+.absolute-image {
+    position: absolute;
+    top: 215px;
+    /* укажите нужное значение */
+    left: 330px;
+    /* укажите нужное значение */
+    /* Дополнительно можно задать размеры */
+    width: 398px;
+    height: 510px;
+    z-index: 1;
+}
+
+.app_section h3 {
+    font-family: 'Furore', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.app_section p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+    line-height: 1.5;
+}
+
+.app_advantage {
+    width: 688px;
+    height: 128px;
+    border-radius: 12px;
+    background-color: #E7FAEF;
+    margin-top: 24px;
+    position: relative;
+}
+
+.app_advantage_icon {
+    position: absolute;
+}
+
+.app_advantage_icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.app_advantage_p {
+    position: absolute;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.icon1 {
+    top: 16px;
+    left: 16px;
+}
+
+.icon2 {
+    top: 72px;
+    left: 16px;
+}
+
+.icon3 {
+    top: 16px;
+    left: 355px;
+}
+
+.icon4 {
+    top: 72px;
+    left: 355px;
+}
+
+.p1 {
+    top: 25px;
+    left: 72px;
+}
+
+.p2 {
+    top: 81px;
+    left: 72px;
+}
+
+.p3 {
+    top: 25px;
+    left: 411px;
+}
+
+.p4 {
+    top: 81px;
+    left: 411px;
+}
+
+.functions_list {
+    margin-top: 64px;
+}
+
+.functions_list h4 {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.functions_list ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+}
+
+.functions_list ul li {
+    font-family: 'Gilroy-Light', sans-serif;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 6px;
+}
+
+.functions_list ul li::before {
+    font-family: 'Gilroy-Light', sans-serif;
+    content: "•";
+    color: #27AE60;
+    font-size: 22px;
+    position: absolute;
+    padding-left: 11px;
+    left: 0;
+    top: 0;
+}
+
+.download-container {
+    display: flex;
+    gap: 60px;
+}
+
+.download-section {
+    margin-top: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.app_section .download-title {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 226px;
+    height: 56px;
+    background-color: #333;
+    color: #fff;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+/* Sale Screen */
+
+
+.sale {
+    width: 768px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+}
+
+.gallery {
+    width: 698px;
+    height: 520px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-top: 36px;
+}
+
+.image-container {
+    width: 519px;
+    height: 519px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-image {
+    position: relative;
+    z-index: 1;
+    /* Делаем изображение выше кругов */
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* Становится вертикальной */
+}
+
+.thumbnail-container {
+    width: 160px;
+    height: 160px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.thumbnail-container img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.inactive {
+    position: relative;
+}
+
+.inactive::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(239, 239, 239, 0.302);
+    border-radius: 12px;
+}
+
+.thumbnail-container:hover {
+    transform: scale(1.1);
+}
+
+.image-container {
+    position: relative;
+    /* Добавляем позиционирование */
+    width: 519px;
+    height: 519px;
+    background-color: #f2f2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Чтобы размытые круги не выходили за границы */
+}
+
+.blur-circle-gallery {
+    position: absolute;
+    width: 160px;
+    /* Увеличил размер */
+    height: 160px;
+    border-radius: 50%;
+    background-color: #333333;
+    /* Оранжевый цвет */
+    filter: blur(125px);
+    /* Уменьшил размытие для видимости */
+    z-index: 0;
+    /* Делаем круги ниже изображения */
+}
+
+.circle1 {
+    top: 180px;
+    left: 189px;
+}
+
+.circle2 {
+    width: 300px;
+    height: 70px;
+    top: 378px;
+    left: 94px;
+}
+
+
+.sale h1 {
+    margin: 0;
+    font-family: 'Furore', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.sale h3 {
+    margin: 0;
+    margin-top: 24px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+}
+
+
+.device_description {
+    width: 698px;
+    align-items: left;
+    text-align: left;
+}
+
+.device_description h1 {
+    margin: 0;
+    font-family: 'Furore', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.device_description h3 {
+    margin: 0;
+    margin-top: 24px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.desc {
+    margin-top: 24px;
+}
+
+.desc p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4f4f4f;
+    line-height: 1.5;
+}
+
+.accordion {
+    width: 688px;
+    margin-top: 36px;
+}
+
+.accordion-item {
+    padding-top: 8px;
+    /* Отступ перед границей */
+    padding-bottom: 8px;
+    /* Отступ после границы */
+    border-bottom: 3px solid #E0E0E0;
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 0;
+    font-weight: bold;
+    cursor: pointer;
+
+    font-family: 'Furore', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333333;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    display: none;
+
+    font-size: 14px;
+    color: #333;
+}
+
+.accordion-text {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #4F4F4F;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+
+.specs {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+    padding-top: 24px;
+    padding-bottom: 2px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+/* Название характеристики */
+.spec-name {
+    white-space: nowrap;
+}
+
+/* Значение характеристики */
+.spec-value {
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* Пунктирная линия между колонками */
+.spec-line {
+    flex-grow: 1;
+    height: 1px;
+    background: repeating-linear-gradient(to right,
+            #ccc,
+            #ccc 4px,
+            transparent 4px,
+            transparent 8px);
+    align-self: flex-end;
+    /* Смещение вниз */
+}
+
+.sale_buttons {
+    margin: 0;
+    margin-top: 106px;
+    display: flex;
+    gap: 11px;
+}
+
+.btn {
+    width: 351px;
+    height: 56px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Furore', sans-serif;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-green {
+    background: #219653;
+    box-shadow:
+        0px 5px 20px -2px rgba(33, 150, 83, 0.5),
+        inset 0px 4px 6px 3px rgba(39, 174, 96, 1);
+}
+
+.btn-green:hover {
+    background: #16A34A;
+    box-shadow:
+        0px 5px 20px -2px rgba(22, 163, 74, 0.5),
+        inset 0px 4px 6px 3px rgba(34, 197, 94, 1);
+}
+
+.btn-black {
+    background-color: #333333;
+    box-shadow: inset 0px 4px 6px 3px #4F4F4F;
+}
+
+
+
+/* Poster Screen */
+
+
+.poster_section {
+    width: 688px;
+    height: 520px;
+    margin: 0;
+    margin-top: 64px;
+    position: relative;
+}
+
+.poster_background {
+    position: absolute;
+    width: 688px;
+    height: 520px;
+    z-index: 0;
+}
+
+.poster_line1 {
+    position: absolute;
+    z-index: 3;
+    top: 250px;
+    left: 477px;
+}
+
+.poster_line2 {
+    position: absolute;
+    z-index: 3;
+    top: 214px;
+    left: 205px;
+}
+
+.poster_line3 {
+    position: absolute;
+    z-index: 3;
+    top: 374px;
+    left: 161px;
+}
+
+.poster_line4 {
+    position: absolute;
+    z-index: 3;
+    top: 418px;
+    left: 409px;
+}
+
+.poster_line5 {
+    position: absolute;
+    z-index: 3;
+    top: 292px;
+    left: 56px;
+}
+
+.poster_section p {
+    font-family: 'Furore', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #ffffff;
+    z-index: 3;
+}
+
+.text1 {
+    position: absolute;
+    left: 532px;
+    top: 250px;
+}
+
+.text2 {
+    position: absolute;
+    left: 112px;
+    top: 190px;
+}
+
+.text3 {
+    position: absolute;
+    left: 171px;
+    top: 442px;
+}
+
+.text4 {
+    position: absolute;
+    left: 415px;
+    top: 465px;
+}
+
+.text5 {
+    position: absolute;
+    left: 56px;
+    top: 273px;
+}
+
+.poster_blur_ellipse {
+    position: absolute;
+    width: 400px;
+    height: 211px;
+    border-radius: 50%;
+    background-color: #A5D7BA;
+    filter: blur(75px);
+    z-index: 1;
+    left: 158px;
+    top: 236px;
+
+}
+
+.poster_device {
+    position: absolute;
+    width: 300px;
+    height: 186px;
+    z-index: 2;
+    left: 184px;
+    top: 244px;
+}
+
+
+.poster_section h1 {
+    position: absolute;
+    text-align: justify;
+    top: 36px;
+    left: 24px;
+    font-family: 'Furore', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #ffffff;
+    z-index: 3;
+
+
+}
+
+.title_poster {
+    position: absolute;
+    top: 36px;
+    left: 24px;
+    width: 632px;
+    text-transform: uppercase;
+    /* Укажи нужный шрифт */
+}
+
+.line_poster {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Furore', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.line_poster span {
+    font-family: 'Furore', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+
+
+/* Docs Screen */
+
+
+.docs {
+    max-width: 688px;
+    margin-top: 64px;
+}
+
+.docs-title {
+    font-family: 'Furore', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #333;
+}
+
+.docs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+}
+
+.doc-card {
+    display: flex;
+    align-items: center;
+    width: 688px;
+    height: 296px;
+}
+
+.docs-img {
+    width: 340px;
+    height: 296px;
+    border-radius: 12px;
+}
+
+.doc-content {
+    width: 340px;
+    padding-left: 48px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    align-items: left;
+}
+
+.doc-content-reverse {
+    width: 340px;
+    margin-right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+    align-items: left;
+}
+
+.doc-content p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.doc-content-reverse p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+
+/* History Screen */
+
+
+.history_section {
+    width: 688px;
+    height: 865px;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+}
+
+.history_section h1 {
+    font-family: 'Furore', sans-serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #333333;
+}
+
+
+.history_desc {
+    position: absolute;
+    margin-top: 36px;
+}
+
+.history_desc p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+    line-height: 1.5;
+}
+
+.indent {
+    height: 24px;
+}
+
+.history_desc button {
+    margin-top: 36px;
+}
+
+.history_images {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.history_vector {
+    position: absolute;
+    z-index: 1;
+    right: 30px;
+    top: 300px;
+}
+
+.history_blur_circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    filter: blur(40px);
+    z-index: 2;
+    top: 356px;
+    right: 103px;
+}
+
+.history_device {
+    position: absolute;
+    width: 431px;
+    height: 490px;
+    top: 320px;
+    right: 70px;
+    z-index: 3;
+}
+
+
+.modal-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+#modal {
+    position: absolute;
+    /* Вместо fixed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1280px;
+    height: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для модального окна */
+dialog {
+    left: 80px;
+    width: 70vw;
+    max-width: 688px;
+    max-height: 900px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    /* Исключаем лишние скроллы */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+dialog::backdrop {
+    background: rgba(217, 217, 217, 0.5);
+}
+
+/* Контент внутри */
+.modal-content {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    /* Скролл внутри */
+}
+
+/* Контейнер с колонками */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-grow: 1;
+    /* Заполняем пространство */
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.column img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* После колонок – текст на всю ширину */
+.full-width {
+    flex-shrink: 0;
+    /* Не сжимается */
+    margin-top: 20px;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* Contact Screen */
+
+.contact_section {
+    width: 688px;
+    height: 1106px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.contact_section h1 {
+    font-family: 'Furore', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.contact_section h2 {
+    font-family: 'Furore', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 24px;
+}
+
+.contact_section p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4F4F4F;
+    line-height: 1.5;
+}
+
+.toggle-container {
+    margin-top: 24px;
+    width: 618px;
+    height: 76px;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.toggle-button {
+    width: 294px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.active_button {
+    background-color: #27AE60;
+    color: #FFFFFF;
+}
+
+.inactive_button {
+    background-color: transparent;
+    color: #333333;
+}
+
+.toggle-button+.toggle-button {
+    margin-left: 10px;
+}
+
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    width: 618px;
+}
+
+.contact_sidebar {
+    width: 618px;
+}
+
+.contact_content {
+    display: none;
+}
+
+.contact_content.active_card {
+    display: block;
+}
+
+.contact_card {
+    align-items: left;
+    text-align: left;
+    margin-top: 36px;
+}
+
+.contact_card a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.contact_card h3 {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact_card p {
+    font-family: 'Gilroy-Light', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+    line-height: 1.8;
+}
+
+.contact_icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.venko {
+    margin-top: 26px;
+}
+
+
+
+/* Feedback Screen */
+
+.feedback_section {
+    width: 688px;
+    height: 500px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    background-color: #219653;
+    border-radius: 12px;
+    position: relative;
+    /* Устанавливаем позицию для вложенных элементов */
+    display: flex;
+    overflow: hidden;
+}
+
+.feedback_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Растягиваем картинку на весь блок */
+    height: 100%;
+    object-fit: cover;
+    /* Заполняем блок */
+    z-index: 1;
+    /* Фон должен быть позади остальных элементов */
+}
+
+.feedback_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Добавлено для вертикального расположения */
+    justify-content: space-between;
+    width: 688px;
+    z-index: 2;
+}
+
+
+.feedback_sidebar {
+    width: 688px;
+    padding-top: 36px;
+    padding-left: 24px;
+}
+
+.feedback_sidebar h3 {
+    font-family: 'Furore', sans-serif;
+    color: white;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.feedback_sidebar p {
+    font-family: 'Gilroy-Light', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.feedback_right_column {
+    padding-top: 36px;
+    padding-right: 18px;
+    padding-left: 18px;
+    width: 688px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 652px;
+    color: #4F4F4F;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    border-radius: 12px;
+    border: none;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 16px;
+    height: 56px;
+    font-family: 'Gilroy-Light', sans-serif;
+}
+
+input[name="name"] {
+    width: 321px;
+}
+
+input[name="phone"] {
+    width: 321px;
+}
+
+input[name="email"] {
+    border-radius: 12px;
+    border: none;
+    width: 652px;
+    height: 56px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #4F4F4F;
+    opacity: 1;
+    /* Убедиться, что цвет placeholder не становится полупрозрачным */
+    font-family: 'Furore', sans-serif;
+}
+
+textarea::placeholder {
+    color: #4F4F4F;
+    opacity: 1;
+    /* Убедиться, что цвет placeholder не становится полупрозрачным */
+    font-family: 'Furore', sans-serif;
+}
+
+textarea {
+    width: 652px;
+    height: 100px;
+    border-radius: 12px;
+    border: none;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 19px;
+    font-size: 16px;
+    font-family: 'Gilroy-Light', sans-serif;
+    resize: none;
+    overflow: auto;
+    /* Добавляет скролл, если текст выходит за границы */
+    white-space: pre-wrap;
+    /* Позволяет тексту переноситься */
+}
+
+.feedback_btn {
+    width: 652px;
+    height: 56px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+.feedback_btn:hover {
+    background: #4F4F4F;
+}
+
+.form_hidden {
+    display: none;
+}
+
+.feedback_thankyou {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* ЭТО ДЕЛАЕТ ЭЛЕМЕНТЫ В СТОЛБИК */
+    align-items: center;
+    /* Центрирует элементы по горизонтали */
+    justify-content: center;
+    /* Центрирует элементы по вертикали */
+    text-align: center;
+    width: 688px;
+    z-index: 2;
+}
+
+.feedback_thankyou h2 {
+    color: white;
+    font-family: 'Furore', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-top: 150px;
+}
+
+.feedback_thankyou p {
+    margin-top: 24px;
+    margin-bottom: 36px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    line-height: 1.5;
+}
+
+.resend_btn {
+    width: 416px;
+    height: 56px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Furore', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+/* Footer Screen */
+
+.footer_section {
+    width: 768px;
+    height: 496px;
+    background-color: #333333;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+}
+
+/* Левая секция */
+.footer_left {
+    padding: 36px 0 36px 40px;
+    width: 326px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Элементы идут сверху вниз */
+    align-items: flex-start;
+}
+
+
+.footer_nav {
+    flex-shrink: 0;
+    margin-top: 36px;
+}
+
+.footer_nav h3,
+.footer_info h3 {
+    font-size: 18px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+
+.footer_nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer_nav li {
+    margin-bottom: 24px;
+}
+
+.footer_nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    font-size: 16px;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 400;
+}
+
+.footer_nav a:hover {
+    color: #00ff99;
+}
+
+.footer_copyright {
+    position: absolute;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 500;
+    bottom: 36px;
+}
+
+
+/* Правая секция (информация о разработчике) */
+
+.footer_info {
+    padding-top: 112px;
+    margin: 0;
+    width: 610px;
+}
+
+.footer_info h2 {
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.footer_info p {
+    font-size: 16px;
+    color: #D9D9D9;
+    font-family: 'Gilroy-Light', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+/* Fonts */
+
+
+@font-face {
+    font-family: 'Furore';
+    src: url('../fonts/Furore.otf') format('opentype');
+    /* Исправлено */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/Gilroy-ExtraBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-Light';
+    src: url('../fonts/Gilroy-Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Embla Carousel Fixed Size</title>
+  <style>
+    :root {
+      --slide-spacing: 24px;
+      --slide-width: 240px;
+      --slide-height: 240px;
+      --slider-width: 1280px;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+    }
+
+    .embla {
+      overflow: hidden;
+      width: var(--slider-width);
+      margin: 0;
+    }
+
+    .embla__viewport {
+      overflow: hidden;
+      width: var(--slider-width);
+      margin: 0;
+    }
+
+    .embla__container {
+      display: flex;
+      flex-direction: row;
+      width: var(--slider-width);
+      margin-left: calc(var(--slide-spacing) * -1);
+    }
+
+    .embla__slide {
+      position: relative;
+      flex: 0 0 var(--slide-width);
+      min-width: var(--slide-width);
+      padding-left: var(--slide-spacing);
+      box-sizing: border-box;
+    }
+
+    .slide {
+      background: #F2F2F2;
+      border-radius: 12px;
+      height: var(--slide-height);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .slide_svg {
+      margin-top: 30px;
+      margin-left: 20px;
+      align-self: flex-start;
+      width: 36px;
+      height: 36px;
+    }
+
+    .slide p {
+      width: 200px;
+      font-family: "Gilroy-Light", sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+
+    .slider_title {
+      width: 1280px;
+      height: 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .slider_title h3 {
+      width: 640px;
+      font-family: "Furore", sans-serif;
+      font-size: 40px;
+      font-weight: normal;
+      color: #333333;
+      margin: 0;
+    }
+
+    .embla__controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+    }
+
+    .embla__button {
+      width: 56px;
+      height: 56px;
+      background-size: cover;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .embla__button--prev {
+      background: url("../img/back.svg") no-repeat center;
+      margin-right: 12px;
+    }
+
+    .embla__button--prev:hover {
+      background: url("../img/back_hover.svg") no-repeat center;
+    }
+
+    .embla__button--next {
+      background: url("../img/forward.svg") no-repeat center;
+    }
+
+    .embla__button--next:hover {
+      background: url("../img/forward_hover.svg") no-repeat center;
+    }
+
+
+    @media (max-width: 1279px) {
+      .slider_title {
+        width: 688px;
+        margin-bottom: 12px;
+      }
+
+      .slider_title h3 {
+        width: 50%;
+        font-size: 28px;
+      }
+
+      .slide p {
+        width: 182px;
+        font-size: 16px;
+      }
+
+      .embla__button {
+        width: 56px;
+        height: 56px;
+      }
+
+      .embla__button--prev {
+        margin-right: 8px;
+      }
+    }
+
+    @media (max-width: 767px) {
+
+      .slider_title {
+        width: 343px;
+        height: 36px;
+      }
+
+      .slider_title h3 {
+        width: 236px;
+        font-size: 24px;
+      }
+
+      .slide p {
+        width: 140px;
+        font-size: 14px;
+        margin-left: 16px;
+      }
+
+      .slide_svg {
+        margin-left: 16px;
+      }
+
+      .embla__controls {
+        display: none;
+      }
+
+
+    }
+
+    /* Fonts */
+    @font-face {
+      font-family: "Furore";
+      src: url("../fonts/Furore.otf") format("opentype");
+      /* Исправлено */
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Gilroy-Light";
+      src: url("../fonts/Gilroy-Light.otf") format("opentype");
+      font-weight: lighter;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="desktop-nav"></nav>
+  <nav class="tablet-nav"></nav>
+  <nav class="mobile-nav"></nav>
+
+  <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+  <script>
+    const slidesData = [
+      {
+        icon: 'img/slider/arrow-reload-vertical-2.svg',
+        hoverIcon: 'img/slider/arrow-reload-vertical-2_hover.svg',
+        text: 'Автоматизований робочий процес'
+      },
+      {
+        icon: 'img/slider/heart-rate-search--health-medical-monitor-heart-rate-search.svg',
+        hoverIcon: 'img/slider/heart-rate-search--health-medical-monitor-heart-rate-search_hover.svg',
+        text: 'Точне вимірювання напруги'
+      },
+      {
+        icon: 'img/slider/computer-pc-desktop--screen-desktop-monitor-device-electronics-display-pc-computer.svg',
+        hoverIcon: 'img/slider/computer-pc-desktop--screen-desktop-monitor-device-electronics-display-pc-computer_hover.svg',
+        text: 'Електронне керування та контроль'
+      },
+      {
+        icon: 'img/slider/battery-charging--phone-mobile-charge-device-electricity-power-battery-charging.svg',
+        hoverIcon: 'img/slider/battery-charging--phone-mobile-charge-device-electricity-power-battery-charging_hover.svg',
+        text: 'Енергоефективність та збереження даних'
+      },
+      {
+        icon: 'img/slider/graph--analytics-business-product-graph-data-chart-analysis.svg',
+        hoverIcon: 'img/slider/graph--analytics-business-product-graph-data-chart-analysis_hover.svg',
+        text: 'Регуляювання швидкості підйому напруги'
+      },
+      {
+        icon: 'img/slider/shield-2--shield-protection-security-defend-crime-war-cover.svg',
+        hoverIcon: 'img/slider/shield-2--shield-protection-security-defend-crime-war-cover_hover.svg',
+        text: 'Безпека та надійність у роботі'
+      },
+      {
+        icon: 'img/slider/cog--work-loading-cog-gear-settings-machine.svg',
+        hoverIcon: 'img/slider/cog--work-loading-cog-gear-settings-machine_hover.svg',
+        text: 'Гнучкі налаштування випробувань '
+      },
+      {
+        icon: 'img/slider/browser-website-1--app-code-apps-window-website-web.svg',
+        hoverIcon: 'img/slider/browser-website-1--app-code-apps-window-website-web_hover.svg',
+        text: 'Зручний LCD-індикатор '
+      },
+      {
+        icon: 'img/slider/arrow-reload-horizontal-2.svg',
+        hoverIcon: 'img/slider/arrow-reload-horizontal-2_hover.svg',
+        text: 'Автоматичне перемішування '
+      },
+      {
+        icon: 'img/slider/vertical-slider-square--adjustment-adjust-controls-fader-vertical-settings-slider-square.svg',
+        hoverIcon: 'img/slider/vertical-slider-square--adjustment-adjust-controls-fader-vertical-settings-slider-square_hover.svg',
+        text: 'Регульована швидкість перемішування'
+      },
+      {
+        icon: 'img/slider/paintbrush-1--brush-color-colors-design-paint-painting.svg',
+        hoverIcon: 'img/slider/paintbrush-1--brush-color-colors-design-paint-painting_hover.svg',
+        text: 'Сучасний ергономічний дизайн'
+      },
+      {
+        icon: 'img/slider/shield-1--shield-protection-security-defend-crime-war-cover.svg',
+        hoverIcon: 'img/slider/shield-1--shield-protection-security-defend-crime-war-cover_hover.svg',
+        text: 'Міцний металевий корпус'
+      },
+      {
+        icon: 'img/slider/wrench--crescent-tool-construction-tools-wrench-setting-edit-adjust.svg',
+        hoverIcon: 'img/slider/wrench--crescent-tool-construction-tools-wrench-setting-edit-adjust_hover.svg',
+        text: 'Легка установка та уніфікованість'
+      },
+      {
+        icon: 'img/slider/printer--scan-device-electronics-printer-print-computer.svg',
+        hoverIcon: 'img/slider/printer--scan-device-electronics-printer-print-computer_hover.svg',
+        text: 'Вбудований термопринтер'
+      },
+      {
+        icon: 'img/slider/desktop-check--success-approve-device-display-desktop-computer.svg',
+        hoverIcon: 'img/slider/desktop-check--success-approve-device-display-desktop-computer_hover.svg',
+        text: 'Інтеграція з ПК '
+      },
+      {
+        icon: 'img/slider/battery-full-1--phone-mobile-charge-device-electricity-power-battery-full.svg',
+        hoverIcon: 'img/slider/battery-full-1--phone-mobile-charge-device-electricity-power-battery-full_hover.svg',
+        text: 'Автономне живлення'
+      }
+    ];
+
+    const getResponsiveConfig = () => {
+      if (window.innerWidth >= 1280) {
+        return {
+          slidesToShow: 5,
+          slideWidth: '260px',
+          slideSpacing: '20px',
+          slideHeight: '240px',
+          sliderWidth: '1280px',
+          loop: true,
+          targetSelector: '.desktop-nav'
+        };
+      } else if (window.innerWidth >= 768) {
+        return {
+          slidesToShow: 3,
+          slideWidth: '236px',
+          slideSpacing: '16px',
+          slideHeight: '220px',
+          sliderWidth: '692px',
+          loop: true,
+          targetSelector: '.tablet-nav'
+        };
+      } else {
+        return {
+          slidesToShow: 2,
+          slideWidth: '178px',
+          slideSpacing: '13px',
+          slideHeight: '165px',
+          sliderWidth: '343px',
+          loop: true,
+          targetSelector: '.mobile-nav'
+        };
+      }
+    };
+
+    let emblaInstance = null;
+    let currentTarget = null;
+    let sliderConfig = null;
+
+    function applyConfig(config) {
+      document.documentElement.style.setProperty('--slide-width', config.slideWidth);
+      document.documentElement.style.setProperty('--slide-height', config.slideHeight);
+      document.documentElement.style.setProperty('--slider-width', config.sliderWidth);
+      document.documentElement.style.setProperty('--slide-spacing', config.slideSpacing);
+    }
+
+    function createEmblaSection() {
+      const section = document.createElement('section');
+      section.className = 'embla';
+      section.innerHTML = `
+      <div class="slider_title">
+        <h3>ПЕРЕВАГИ UIM-90</h3>
+        <div class="embla__controls">
+          <div>
+            <button class="embla__button embla__button--prev"></button>
+            <button class="embla__button embla__button--next"></button>
+          </div>
+        </div>
+      </div>
+      <div class="embla__viewport">
+        <div class="embla__container"></div>
+      </div>
+    `;
+      return section;
+    }
+
+    function createSlides(container) {
+      container.innerHTML = '';
+      slidesData.forEach((item) => {
+        const slide = document.createElement('div');
+        slide.className = 'embla__slide';
+
+        const slideContent = document.createElement('div');
+        slideContent.className = 'slide';
+
+        const img = document.createElement('img');
+        img.className = 'slide_svg';
+        img.src = item.icon;
+
+        const text = document.createElement('p');
+        text.textContent = item.text;
+
+        slideContent.appendChild(img);
+        slideContent.appendChild(text);
+        slide.appendChild(slideContent);
+        container.appendChild(slide);
+
+        slideContent.addEventListener('mouseenter', () => {
+          slideContent.style.backgroundColor = '#27AE60';
+          text.style.color = '#fff';
+          if (item.hoverIcon) img.src = item.hoverIcon;
+        });
+
+        slideContent.addEventListener('mouseleave', () => {
+          slideContent.style.backgroundColor = '#F2F2F2';
+          text.style.color = '#333';
+          img.src = item.icon;
+        });
+      });
+    }
+
+    function setupEmbla() {
+      const config = getResponsiveConfig();
+
+      // Если нет подходящей конфигурации — удаляем слайдер
+      if (!config) {
+        if (currentTarget) currentTarget.innerHTML = '';
+        if (emblaInstance) emblaInstance.destroy();
+        emblaInstance = null;
+        return;
+      }
+
+      if (sliderConfig && sliderConfig.targetSelector === config.targetSelector) {
+        return; // тот же блок, ничего не делать
+      }
+
+      sliderConfig = config;
+
+      // Очищаем старую секцию
+      if (currentTarget) currentTarget.innerHTML = '';
+
+      applyConfig(config);
+
+      // Создаём новую секцию
+      const emblaSection = createEmblaSection();
+      const targetNav = document.querySelector(config.targetSelector);
+      if (!targetNav) return;
+
+      let sliderWrapper = targetNav.querySelector('.slider');
+      if (!sliderWrapper) {
+        sliderWrapper = document.createElement('section');
+        sliderWrapper.className = 'slider';
+        targetNav.appendChild(sliderWrapper);
+      }
+
+      // Очищаем старую секцию внутри wrapper
+      sliderWrapper.innerHTML = '';
+
+      applyConfig(config);
+
+      // Добавляем embla внутрь .slider
+      sliderWrapper.appendChild(emblaSection);
+      currentTarget = sliderWrapper;
+
+      const viewportNode = emblaSection.querySelector('.embla__viewport');
+      const container = emblaSection.querySelector('.embla__container');
+      const prevBtn = emblaSection.querySelector('.embla__button--prev');
+      const nextBtn = emblaSection.querySelector('.embla__button--next');
+
+      createSlides(container);
+
+      emblaInstance = EmblaCarousel(viewportNode, {
+        loop: config.loop,
+        align: 'start'
+      });
+
+      function setupButtons() {
+        const update = () => {
+          prevBtn.disabled = !emblaInstance.canScrollPrev();
+          nextBtn.disabled = !emblaInstance.canScrollNext();
+        };
+        prevBtn.addEventListener('click', emblaInstance.scrollPrev, false);
+        nextBtn.addEventListener('click', emblaInstance.scrollNext, false);
+        emblaInstance.on('select', update);
+        emblaInstance.on('init', update);
+        update();
+      }
+
+      setupButtons();
+    }
+
+    window.addEventListener('resize', setupEmbla);
+    window.addEventListener('DOMContentLoaded', setupEmbla);
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Документація</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .docs {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .docs-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .docs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .doc-card {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .doc-card:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .doc-card img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+
+    .doc-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .doc-content p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .download-btn {
+      background-color: #1e1e1e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #333;
+    }
+
+    .download-btn img {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+<body>
+  <section class="docs">
+    <h2 class="docs-title">Документація</h2>
+    <div class="docs-list">
+
+      <div class="doc-card">
+        <img src="img/doc1.png" alt="Керівництво з експлуатації">
+        <div class="doc-content">
+          <p>Керівництво з експлуатації</p>
+          <button class="download-btn">
+            <img src="img/download-icon.svg" alt="Завантажити"> Завантажити
+          </button>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <img src="img/doc2.png" alt="Керівництво користувача VirtualUIM">
+        <div class="doc-content">
+          <p>Керівництво користувача VirtualUIM</p>
+          <button class="download-btn">
+            <img src="img/download-icon.svg" alt="Завантажити"> Завантажити
+          </button>
+        </div>
+      </div>
+
+      <div class="doc-card">
+        <img src="img/doc3.png" alt="Технічні умови">
+        <div class="doc-content">
+          <p>Технічні умови</p>
+          <button class="download-btn">
+            <img src="img/download-icon.svg" alt="Завантажити"> Завантажити
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>
